@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Doqo
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20220901170500"> <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&_v=20220901170500" rel="stylesheet">
+
+    <script type="text/javascript">
+        let ALLOWED = false
+
+        const askPassword = () => {
+            if (prompt("Type password") == '2029') {
+                ALLOWED = true
+            }
+        }
+
+        do {
+            askPassword()
+        } while (!ALLOWED)
+    </script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="main__navigation">
+            <nav class="navigation">
+                <div id="closeMenu" class="navigation__closeBtn"></div>
+                <div class="navigation__content">
+                    <div class="navigation__logo"> <img src="./images/logo.png" alt="logo" /> </div>
+                    <ul>
+                        <li> <a href="#"> Портфолио </a> </li>
+                        <li> <a href="#"> Команда </a> </li>
+                        <li> <a href="#"> Услуги </a> </li>
+                        <li> <a href="#"> Как мы работаем </a> </li>
+                    </ul>
+                    <div class="navigation__contacts"> <span class="navigation__contacts__header"> Свяжитесь с нами
+                        </span> <a href="tel:8 800 222 83 30"> 8 800 222 83 30 </a> <a href="#"
+                            class="navigation__contacts__email"> sale@doqo.studio </a>
+                        <div class="navigation__contacts__socialNetworks"> <a href="#"
+                                class="navigation__contacts__socialNetworks__item">
+                                <div class="navigation__contacts__socialNetworks__item__icon"> <svg width="28"
+                                        height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M26.7791 1.69976C26.9714 1.06482 26.7791 0.620361 25.8814 0.620361H22.8893C22.1199 0.620361 21.778 1.02249 21.5856 1.46695C21.5856 1.46695 20.0682 5.14959 17.9096 7.52002C17.2044 8.21846 16.9052 8.4301 16.5205 8.4301C16.3281 8.4301 16.0503 8.21846 16.0503 7.58352V1.69976C16.0503 0.93783 15.8366 0.620361 15.1954 0.620361H10.4935C10.0233 0.620361 9.72414 0.980159 9.72414 1.29763C9.72414 2.01723 10.7927 2.18654 10.921 4.17602V8.53593C10.921 9.48833 10.75 9.65765 10.3653 9.65765C9.36082 9.65765 6.88166 5.97501 5.42835 1.74209C5.12915 0.958996 4.85131 0.620361 4.08191 0.620361H1.08982C0.234941 0.620361 0.0639648 1.02249 0.0639648 1.46695C0.0639648 2.25004 1.06845 6.14433 4.78719 11.2873C7.26635 14.8007 10.75 16.7055 13.9131 16.7055C15.8152 16.7055 16.0503 16.2822 16.0503 15.5626V12.8958C16.0503 12.0493 16.2213 11.8799 16.841 11.8799C17.2899 11.8799 18.0379 12.0916 19.8118 13.7847C21.8421 15.7954 22.1841 16.7055 23.3168 16.7055H26.3089C27.1638 16.7055 27.5912 16.2822 27.3347 15.4568C27.0569 14.6313 26.0951 13.425 24.8128 11.9858C24.1075 11.1603 23.0603 10.2926 22.7611 9.84813C22.3123 9.27669 22.4405 9.02271 22.7611 8.53593C22.7611 8.51476 26.4157 3.43525 26.7791 1.69976Z"
+                                            fill="white" />
+                                    </svg> </div>
+                            </a> <a href="#" class="navigation__contacts__socialNetworks__item">
+                                <div class="navigation__contacts__socialNetworks__item__icon"> <svg width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.9098 4.59198C19.5911 2.27064 16.5076 0.991702 13.2224 0.990356C6.45327 0.990356 0.943923 6.49925 0.941281 13.2704C0.940333 15.435 1.50585 17.5477 2.5806 19.4101L0.838287 25.774L7.34865 24.0663C9.14241 25.0446 11.162 25.5603 13.2175 25.561H13.2225V25.561C19.9909 25.561 25.5007 20.0516 25.5035 13.2803C25.5047 9.99874 24.2284 6.91322 21.9098 4.59198ZM13.2224 23.487H13.2183C11.3867 23.4863 9.59023 22.9941 8.02299 22.0642L7.65031 21.843L3.78696 22.8564L4.81819 19.0897L4.57546 18.7034C3.5537 17.0783 3.01406 15.1998 3.01486 13.2711C3.01705 7.6432 7.59622 3.06453 13.2266 3.06453C15.9529 3.06538 18.5159 4.12856 20.4431 6.05797C22.3702 7.98737 23.431 10.552 23.4299 13.2794C23.4276 18.9078 18.8486 23.487 13.2224 23.487Z"
+                                            fill="white" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M18.8214 15.842C18.5145 15.6884 17.0058 14.9461 16.7245 14.8436C16.4433 14.7412 16.2387 14.69 16.0342 14.9972C15.8296 15.3044 15.2415 15.9956 15.0625 16.2004C14.8835 16.4051 14.7045 16.4309 14.3977 16.2772C14.0908 16.1236 13.1021 15.7996 11.93 14.7541C11.0177 13.9404 10.4019 12.9356 10.2229 12.6283C10.0439 12.3212 10.2038 12.1551 10.3575 12.0021C10.4955 11.8645 10.6643 11.6437 10.8178 11.4645C10.9712 11.2854 11.0223 11.1573 11.1246 10.9526C11.2269 10.7478 11.1758 10.5686 11.099 10.415C11.0223 10.2614 10.4087 8.75102 10.153 8.1365C9.90381 7.53823 9.65086 7.61929 9.46247 7.60977C9.28375 7.60084 9.07891 7.599 8.87437 7.599C8.66983 7.599 8.33732 7.67582 8.05611 7.98296C7.77484 8.29019 6.98206 9.03263 6.98206 10.5429C6.98206 12.0533 8.08163 13.5125 8.23507 13.7172C8.38847 13.9221 10.3989 17.0215 13.4771 18.3507C14.2092 18.6669 14.7808 18.8557 15.2265 18.9971C15.9616 19.2307 16.6305 19.1977 17.1593 19.1187C17.7488 19.0306 18.9748 18.3764 19.2305 17.6596C19.4862 16.9428 19.4862 16.3283 19.4095 16.2004C19.3328 16.0724 19.1282 15.9956 18.8214 15.842Z"
+                                            fill="white" />
+                                    </svg> </div>
+                            </a> <a href="" class="navigation__contacts__socialNetworks__item">
+                                <div class="navigation__contacts__socialNetworks__item__icon"> <svg width="22"
+                                        height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21.7427 1.14965C21.457 0.873445 20.9428 0.842755 20.0857 1.11896C19.4858 1.3031 14.2005 3.45137 9.51509 5.53827C5.31542 7.41033 1.8871 9.03688 1.48714 9.25171C1.03003 9.40516 0.0586729 9.8655 0.00153442 10.5714C-0.0270348 11.0317 0.344365 11.4307 1.03003 11.7683C1.77283 12.1672 5.05829 13.3334 5.74395 13.5789C5.97251 14.4689 7.3724 19.5634 7.45811 19.8703C7.54382 20.3307 7.82951 20.6069 7.97235 20.6989C8.00092 20.6989 8.02949 20.7603 8.08663 20.791C8.14377 20.8524 8.25805 20.8831 8.37232 20.8831C8.51517 20.8831 8.71516 20.791 8.88657 20.6682C9.77222 19.901 11.2864 18.1824 11.7149 17.6913C13.5719 19.2872 15.6289 21.0365 15.8289 21.2513L15.8575 21.282C16.3146 21.681 16.8003 21.9265 17.2288 21.9265C17.3716 21.9265 17.5145 21.8958 17.6573 21.8344C18.143 21.6503 18.5144 21.1593 18.6287 20.4534C18.6287 20.4227 18.6573 20.3307 18.7144 20.1465C19.5143 16.3717 20.1714 13.0265 20.6857 10.2338C21.1713 7.47171 21.5999 4.80171 21.8284 3.3593C21.857 2.99103 21.9141 2.71482 21.9427 2.53068C22.0284 2.00896 22.057 1.42586 21.7427 1.14965ZM17.7145 5.41551L14.829 8.30033C12.8291 10.2952 10.2008 12.8731 8.45803 14.561C8.45803 14.561 8.45803 14.561 8.45803 14.5917L8.42946 14.6224C8.42946 14.6224 8.42946 14.6531 8.40089 14.6531C8.40089 14.6838 8.40089 14.6838 8.37232 14.7145V14.7451C8.37232 14.7451 8.37232 14.7451 8.37232 14.7758C8.25805 16.2182 8.02949 18.6734 7.94379 19.7782C7.94379 19.7782 7.94379 19.7782 7.94379 19.7476C7.85808 19.4407 6.51532 14.5303 6.22963 13.5176L17.6002 5.41551C17.6002 5.38482 17.6573 5.35413 17.6859 5.32344C17.7145 5.32344 17.7145 5.29275 17.743 5.29275C17.7716 5.29275 17.7716 5.29275 17.8002 5.26206C17.8002 5.29275 17.7716 5.35413 17.7145 5.41551Z"
+                                            fill="white" />
+                                    </svg> </div>
+                            </a> </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="main__content">
+            <div class="content">
+                <div class="content__content">
+
+                    <header class="header">
+                        <div id="burger" class="burger">
+                            <div class="burger__content"> <span class="burger__line"></span> <span
+                                    class="burger__line"></span> <span class="burger__line"></span> </div>
+                        </div>
+                        <div class="container">
+                            <div class="header__content">
+                                <a href="#" class="header__logo">
+                                    <img src="./images/logo.png" alt="logo" />
+                                </a>
+                                <div class="header__phone"> <a href="tel: 8 800 222 8330"> 8 800 222 8330 </a> </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- ! CONTENT START -->
+
+
+
+                    <section id="intro" class="intro">
+                        <div class="container">
+
+                            <div class="intro__video">
+                                <div class="intro__video__videoWrapper">
+                                    <video loop autoplay muted poster="./images/index/intro__img_bottom.png"
+                                        class="intro__video__video">
+                                        <source src="./videos/intro__testVideo.webm" type="video/webm">
+                                        <source src="./videos/intro__testVideo.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+
+                                <div class="intro__video__mask">
+                                    <div class="intro__video__mask__top">
+                                        <h2 class="intro__title intro__titleStart">
+                                            Рекламные видео-
+                                        </h2>
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1219 105" style="enable-background:new 0 0 1219 105;"
+                                            xml:space="preserve">
+                                            <path class="st0" d="M0,0h1219v105H0V0z M871.2,52.1c0,27.7-22.4,50.1-50.1,50.1S771,79.8,771,52.1C771,24.4,793.4,2,821.1,2
+	S871.2,24.4,871.2,52.1z M937.4,102.2c27.7,0,50.1-22.4,50.1-50.1C987.5,24.4,965,2,937.4,2c-27.7,0-50.1,22.4-50.1,50.1
+	C887.3,79.8,909.7,102.2,937.4,102.2z M1102.7,52.1c0,27.7-22.4,50.1-50.1,50.1c-27.7,0-50.1-22.4-50.1-50.1
+	c0-27.7,22.4-50.1,50.1-50.1C1080.3,2,1102.7,24.4,1102.7,52.1z M1168.9,102.2c27.7,0,50.1-22.4,50.1-50.1
+	c0-27.7-22.4-50.1-50.1-50.1c-27.7,0-50.1,22.4-50.1,50.1C1118.8,79.8,1141.2,102.2,1168.9,102.2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="intro__video__mask__bottom">
+                                        <!-- <img src="./images/index/intro__img_bottom.png" alt="" /> -->
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1219 212" style="enable-background:new 0 0 1219 212;"
+                                            xml:space="preserve">
+                                            <g>
+                                                <path class="st0" d="M325.4,65.7c-4.6-5-10.2-8.8-16.6-11.4c-6.3-2.6-13.1-3.9-20.5-3.9s-14.3,1.3-20.8,3.9
+		c-6.3,2.6-11.8,6.4-16.6,11.4c-4.6,4.8-8.3,10.6-11.1,17.5c-2.6,6.6-3.9,14.2-3.9,22.7c0,8.3,1.3,15.9,3.9,22.7
+		c2.8,6.8,6.5,12.7,11.1,17.7c4.8,4.8,10.4,8.5,16.6,11.1c6.5,2.6,13.4,3.9,20.8,3.9s14.2-1.3,20.5-3.9c6.5-2.6,12-6.3,16.6-11.1
+		c4.8-5,8.5-10.9,11.1-17.7c2.8-6.8,4.2-14.4,4.2-22.7c0-8.5-1.4-16.1-4.2-22.7C333.9,76.3,330.2,70.5,325.4,65.7z" />
+                                                <path class="st0" d="M1164.9,89.2l-79.9,113.6h-51.8V8.9h54.1v113.9l80.1-113.9h51.6V0H0v8.9h88.7c17.7,0,33,2.9,45.8,8.6
+		c12.9,5.7,22.9,14,29.9,24.9c7,10.7,10.5,23.5,10.5,38.2c0,14.6-3.5,27.2-10.5,38c-7,10.7-17,19-29.9,24.9
+		c-12.8,5.7-28,8.6-45.8,8.6H54.9v50.7H0v9.2h1219v-9.2h-54.1V89.2z M365.3,178.1c-9.6,9-21,16.1-34.1,21.1c-12.9,5-27.3,7.5-43,7.5
+		c-15.5,0-29.9-2.5-43-7.5c-13.1-5-24.6-12-34.4-21.1c-9.6-9.2-17.1-19.9-22.5-32.1c-5.4-12.2-8-25.6-8-40.2c0-14.6,2.7-28,8-40.2
+		c5.4-12.2,12.8-22.8,22.5-31.9c9.8-9.2,21.3-16.3,34.4-21.3c13.1-5,27.5-7.5,43-7.5c15.7,0,30,2.5,43,7.5
+		c13.1,5,24.5,12.1,34.1,21.3c9.6,9,17.1,19.7,22.5,31.9c5.5,12.2,8.3,25.6,8.3,40.2c0,14.6-2.8,28.1-8.3,40.4
+		C382.4,158.5,374.9,169.1,365.3,178.1z M591.4,202.8h-54.1V52.4h-55.9l-1,31.6c-0.6,18.8-1.8,35.8-3.9,51c-2,15-5.3,27.8-9.7,38.5
+		c-4.4,10.5-10.6,18.7-18.6,24.4c-7.8,5.5-17.7,8.3-29.9,8.3c-2.9,0-6-0.2-9.2-0.5c-0.5-0.1-1-0.1-1.5-0.2c-0.4,0-0.8-0.1-1.2-0.2
+		c-4.1-0.6-8.4-1.4-13-2.5l3-44.9c2.6,0.6,5.1,0.8,7.5,0.8c7.6,0,13.3-3,17.2-8.9c3.9-6.1,6.6-14.6,8-25.5
+		c1.7-10.9,2.7-23.6,3.1-38.2L435,8.9h156.4V202.8z M809,202.8h-54.1V89.2L675,202.8h-51.8V8.9h54.1v113.9L757.4,8.9H809V202.8z
+		 M963.5,202.8l-44-74.2h-25.1v74.2h-54.6V8.9h54.6v75.3h26.5l46.2-75.3h57.7L964,102.6l61.3,100.1H963.5z" />
+                                                <path class="st0" d="M119.5,80.6c0-9-2.9-16.1-8.6-21.1c-5.5-5-14-7.5-25.5-7.5H54.9v56.8h30.5c11.5,0,20-2.5,25.5-7.5
+		C116.6,96.4,119.5,89.5,119.5,80.6z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="intro__content">
+                                <h2 class="intro__title intro__titleEnd"> для бизнеса </h2>
+                                <p class="intro__paragraph"> Увеличьте конверсию сайта <b>в два раза</b> благодаря
+                                    рекламным
+                                    видеороликам с графикой и motion-анимацией </p> <a href=#
+                                    class="gGetXBtn intro__btn"> Получить подборку </a>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="portfolio" class="portfolio">
+                        <div class="container">
+                            <h2 class="gTitle_c"> портфолио </h2>
+                        </div>
+                        <div class="portfolio__images">
+                            <!-- items -->
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img1.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img2.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img3.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+
+                            <!-- ! BIG -->
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img4.jpg" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        4 BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img8.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img7.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img7.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img8.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                                <div class="portfolio__images__item__imgWrapper">
+                                    <img src="./images/index/portfolio__img7.png" alt="img"
+                                        class="portfolio__images__item__img" />
+                                    <span class="portfolio__images__item__btn">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.2703 15.1351L7.56756 28.2425L7.56756 2.02772L30.2703 15.1351Z"
+                                                fill="#181716" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span class="portfolio__images__item__title">
+                                    <b>
+                                        BORK
+                                    </b> <br />
+                                    Промо-ролик для нового продукта компании
+                                </span>
+                            </div>
+
+                            <!--  -->
+
+                        </div>
+
+                        <!--  -->
+
+                        <div id="portfolio__videoPlayer" class="portfolio__videoPlayer">
+                            <div class="portfolio__videoPlayer__videoWrapper">
+                                <video controls id="portfolio__videoPlayer__video"
+                                    class="portfolio__videoPlayer__video">
+                                    <source src="movie.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            const portfolio__videoPlayer = document.getElementById('portfolio__videoPlayer')
+                            const portfolio__video = portfolio__videoPlayer.querySelector('#portfolio__videoPlayer__video')
+
+                            const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+
+                            const preventPressingSpaceFromScroll = function (e) {
+                                if (e.keyCode === 32 && e.target === document.body) {
+                                    e.preventDefault();
+                                }
+                            }
+
+                            function togglePlaying(e) {
+
+                                if (e.code === 'Space') {
+
+                                    if (isVideoPlaying(portfolio__video)) {
+                                        portfolio__video.pause()
+                                    } else {
+                                        portfolio__video.play()
+                                    }
+
+                                }
+                            }
+
+                            function portfolio__openVideoPopup(props) {
+                                let { videoLink } = props
+
+                                portfolio__changePopUpContent({
+                                    "videoLink": videoLink
+                                })
+
+                                !portfolio__videoPlayer.classList.contains('portfolio__videoPlayer_active') && portfolio__videoPlayer.classList.add('portfolio__videoPlayer_active')
+
+                                portfolio__video.load()
+
+                                window.addEventListener('keyup', togglePlaying)
+                                window.addEventListener('keydown', preventPressingSpaceFromScroll)
+                            }
+
+                            function portfolio__closeVideoPopup() {
+                                portfolio__videoPlayer.classList.contains('portfolio__videoPlayer_active') && portfolio__videoPlayer.classList.remove('portfolio__videoPlayer_active')
+
+                                portfolio__changePopUpContent({
+                                    "videoLink": ''
+                                })
+
+                                window.removeEventListener('keyup', togglePlaying)
+                                window.removeEventListener('keydown', preventPressingSpaceFromScroll)
+                            }
+
+                            function portfolio__changePopUpContent(props) {
+                                const { videoLink } = props
+
+                                portfolio__video.querySelector('source').src = videoLink
+                            }
+
+                            document.getElementById("portfolio").querySelectorAll('.portfolio__images__item').forEach((el) => {
+
+                                el.addEventListener('click', (e) => {
+                                    portfolio__openVideoPopup({
+                                        "videoLink": el.getAttribute('data-videolink')
+                                    })
+                                })
+                            })
+
+                            portfolio__videoPlayer.addEventListener('click', portfolio__closeVideoPopup)
+                            portfolio__video.addEventListener('click', (e) => e.stopPropagation())
+                        </script>
+                    </section>
+
+
+                    <section id="price" class="price">
+                        <div class="container">
+                            <div class="price__content">
+                                <h2 class="gTitle price__title"> Узнайте стоимость ролика! </h2> <span
+                                    class="price__booksImgWrapper"> <img src="./images/index/price__books.png" alt="img"
+                                        class="price__booksImg" /> </span> <br />
+                                <p class="price__description"> Пройдите тест за 2 минуты и получите полный расчёт﻿
+                                    <br />
+                                    + бонус « <b> 3 типовых сценария </b>»
+                                </p> <br />
+                                <span href="#" class="gGetXBtn price__getEstimate"> Получить полную смету </span>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="statistics" class="statistics">
+                        <div class="container">
+                            <div class="statistics__content">
+                                <div class="statistics__statistics">
+                                    <span class="statistics__statistics__string">
+                                        Создали более
+                                    </span>
+                                    <b class="statistics__statistics__number">650</b>
+                                    <span
+                                        class="statistics__statistics__string statistics__statistics__string_firstLast">
+                                        роликов
+                                    </span>
+                                    <div class="statistics__statistics__secondItemWrapper"> <span
+                                            class="statistics__statistics__string statistics__statistics__string_lastFirst">
+                                            суммарно </span> <b class="statistics__statistics__number"> 7 600 </b> <span
+                                            class="statistics__statistics__string"> минут видео </span>
+                                    </div>
+                                </div>
+                                <div class="statistics__photo">
+                                    <div class="statistics__photo__content">
+                                        <div class="statistics__photo__photo">
+                                            <div class="statistics__photo__frame"> <svg width="469" height="608"
+                                                    viewBox="0 0 469 608" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                        x="1" y="133" width="468" height="367">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M468.156 138.395 37.27 133.052l-.731 58.919 430.887 5.343.73-58.919Zm-16.659 119.754L20.61 252.806l-.73 58.919 430.886 5.343.731-58.919ZM19.71 325.403l430.887 5.343-.287 23.146-430.887-5.343.287-23.146ZM432.6 476.791 1.713 471.448l-.287 23.146 430.887 5.343.287-23.146Z"
+                                                            fill="#D9D9D9" />
+                                                    </mask>
+                                                    <g mask="url(#a)">
+                                                        <rect class="statistics__photo__frame__lines" x="72.812"
+                                                            y=".728" width="406.01" height="569.971" rx="20"
+                                                            transform="rotate(6.115 72.812 .728)" fill="#C00000" />
+                                                    </g>
+                                                    <path class="statistics__photo__frame__bg" fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M57.243 18.736C58.42 7.753 68.277-.196 79.26.981l363.927 38.988c10.983 1.177 18.933 11.034 17.756 22.017l-7.982 74.509-407.792-5.057L57.243 18.736ZM38.864 190.288l407.792 5.057-6.53 60.952-407.791-5.057 6.53-60.952ZM26.03 310.09l-1.464 13.661 407.792 5.057 1.463-13.661L26.03 310.09ZM8.917 469.825l13.172-122.954 407.792 5.057-13.173 122.954-407.791-5.057Zm-2.477 23.12L.79 545.692c-1.178 10.983 6.772 20.84 17.755 22.017l363.927 38.988c10.983 1.177 20.84-6.773 22.017-17.756l9.743-90.939L6.44 492.945Z"
+                                                        fill="#FF9E2D" />
+                                                </svg> </div>
+                                            <div class="statistics__photo__img"> <img
+                                                    src="./images/index/director__photo.jpg" /> </div>
+                                        </div>
+                                        <h5 class="statistics__photo__text">
+                                            Тимур Либерман <br />
+                                            Управляющий директор
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="statistics__text">
+                                    <div class="statistics__text__text">
+                                        <b class="statistics__text__text__o">
+                                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M8.7 22.56L4.47035e-08 11.22L8.7 -0.120001H12.66L4.14 11.22L12.66 22.56H8.7ZM19.38 22.56L10.68 11.22L19.38 -0.120001H23.34L14.82 11.22L23.34 22.56H19.38Z"
+                                                    fill="#FF9E2D" />
+                                            </svg>
+
+                                        </b>
+                                        <p> Для меня команда имеет первоначальное значение. Зная профессионализм моих
+                                            ребят, я могу с уверенностью сказать, что любая задача будет выполнена в
+                                            срок. <br /><br /> Наш опыт — более 900 000 часов создания видео и работы с
+                                            заказчиками. Скорее всего, мы уже делали ролик для вашей отрасли и понимаем,
+                                            что наиболее важно для вас и ваших клиентов. Отправьте нам заявку на расчет,
+                                            ﻿и мы с радостью предложим вам конкурентные цены, сроки и креативные идеи
+                                        </p>
+                                        <b class="statistics__text__text__c">
+                                            <svg width="23" height="23" viewBox="0 0 26 23" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.24 22.56H2.28L10.8 11.22L2.28 -0.120001H6.24L14.94 11.22L6.24 22.56ZM16.92 22.56H12.96L21.48 11.22L12.96 -0.120001H16.92L25.62 11.22L16.92 22.56Z"
+                                                    fill="#FF9E2D" />
+                                            </svg>
+
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="gift" class="gift">
+                        <div class="gift__mainWrapper">
+                            <div class="container">
+                                <div>
+                                    <div class="gift__bookImgWrapper">
+                                        <img src="./images/index/gift__book.png" alt="img" class="gift__bookImg" />
+                                    </div>
+                                    <h2 class="gTitle gift__title"> Подарок от команды Doqo </h2>
+
+                                </div>
+                                <p class="gift__description"> Чек-лист по эффективному размещению роликов </p>
+                                <form class="gift__form">
+
+
+                                    <fieldset class="gFormInput gift__input">
+                                        <div class="gFormInput__inputWrapper">
+                                            <input type="email" name="email" placeholder="Email"
+                                                class="gFormInput__input" required />
+                                            <span class="gFormInput__icon"></span>
+                                        </div>
+                                        <span class="gFormInput__hint"
+                                            data-defaultmessage="некорректно введен email"></span>
+                                    </fieldset>
+
+
+                                    <fieldset class="gFormInput gift__input">
+                                        <div class="gFormInput__inputWrapper">
+                                            <input type="tel" placeholder="Телефон" class="gFormInput__input"
+                                                required />
+                                            <span class="gFormInput__icon"></span>
+                                        </div>
+                                        <span class="gFormInput__hint"
+                                            data-defaultmessage="некорректно введен номер телефона"></span>
+                                    </fieldset>
+
+
+
+
+                                    <button class="gift__button">
+                                        Получить
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="whyAreWe" class="whyAreWe">
+                        <div class="container">
+                            <h2 class="gTitle whyAreWe__title"> Почему нас выбирают? </h2>
+                            <div class="whyAreWe__contentWrapper">
+                                <div class="whyAreWe__img"> <img src="./images/index/whyAreWe__img.png" alt="" /> </div>
+                                <div class="whyAreWe__content">
+                                    <div class="whyAreWe__item">
+                                        <h5 class="whyAreWe__item__title"> Креативные идеи </h5>
+                                        <p class="whyAreWe__item__description"> привлекаем и удерживаем внимание ваших
+                                            клиентов </p>
+                                    </div>
+                                    <div class="whyAreWe__item">
+                                        <h5 class="whyAreWe__item__title"> Визуализация </h5>
+                                        <p class="whyAreWe__item__description"> объясняем сложные вещи просто, через
+                                            графику и анимацию </p>
+                                    </div>
+                                    <div class="whyAreWe__item">
+                                        <h5 class="whyAreWe__item__title"> Уникальность ролика </h5>
+                                        <p class="whyAreWe__item__description"> в сценарии прорабатываем отстройку от
+                                            конкурентов </p>
+                                    </div>
+                                    <div class="whyAreWe__item">
+                                        <h5 class="whyAreWe__item__title"> Участие в тендерах </h5>
+                                        <p class="whyAreWe__item__description"> чистая компания, которая может
+                                            размещаться в вашем тендере </p>
+                                    </div>
+                                    <div class="whyAreWe__item">
+                                        <h5 class="whyAreWe__item__title"> Сервис </h5>
+                                        <p class="whyAreWe__item__description"> менеджеры помогают заполнить бриф,
+                                            оперативно решают вопросы и понимают, что вам необходимо </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="videoTypes" class="videoTypes">
+                        <div class="container">
+                            <h2 class="gTitle_c"> какие Типы видеороликов мы делаем </h2>
+                        </div>
+                        <div class="videoTypes__types">
+
+                            <!-- types start -->
+
+                            <div class="videoTypes__type" id="videoTypes__type1">
+                                Обучающие <br /> ролики
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type2">
+                                Интервью
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type3">
+                                Экскурсия
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type4">
+                                Съемка <br /> мероприятий
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type5">
+                                Промо-ролик
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type6">
+                                2D персонажная <br /> анимация
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type7">
+                                Имиджевый <br /> ролик
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type8">
+                                Изометрическая <br /> графика
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+
+                            <div class="videoTypes__type" id="videoTypes__type9">
+                                Аэросъемка
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <div class="videoTypes__type" id="videoTypes__type10">
+                                Презентационный <br /> ролик
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+
+                            <div class="videoTypes__type_octagon" id="videoTypes__type11">
+                                <div class="videoTypes__type_octagon__octagon">
+                                    <svg width="290" height="257" viewBox="0 0 290 257" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3.24445 138.263C-0.328201 132.075 -0.328205 124.451 3.24445 118.263L65.5934 10.2714C69.1661 4.08338 75.7686 0.271395 82.9139 0.271395H207.612C214.757 0.271395 221.36 4.08338 224.932 10.2714L287.281 118.263C290.854 124.451 290.854 132.075 287.281 138.263L224.932 246.255C221.36 252.443 214.757 256.255 207.612 256.255H82.9139C75.7686 256.255 69.1661 252.443 65.5934 246.255L3.24445 138.263Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+                                <div class="videoTypes__type_octagon__content">
+                                    <span class="videoTypes__type_octagon__text">
+                                        2D/3D <br /> графические <br /> ролики <br />
+                                    </span>
+                                </div>
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="videoTypes__type_octagon" id="videoTypes__type12">
+                                <div class="videoTypes__type_octagon__octagon">
+                                    <svg width="290" height="257" viewBox="0 0 290 257" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3.24445 138.263C-0.328201 132.075 -0.328205 124.451 3.24445 118.263L65.5934 10.2714C69.1661 4.08338 75.7686 0.271395 82.9139 0.271395H207.612C214.757 0.271395 221.36 4.08338 224.932 10.2714L287.281 118.263C290.854 124.451 290.854 132.075 287.281 138.263L224.932 246.255C221.36 252.443 214.757 256.255 207.612 256.255H82.9139C75.7686 256.255 69.1661 252.443 65.5934 246.255L3.24445 138.263Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+                                <div class="videoTypes__type_octagon__content">
+                                    <span class="videoTypes__type_octagon__text">
+                                        Игровые <br /> ролики <br /> для соцсетей и ТВ
+                                    </span>
+                                </div>
+                                <span class="videoTypes__type__arrow">
+                                    <span class="videoTypes__type__arrow__frame">
+                                        <svg width="30" height="23" viewBox="0 0 30 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M29.3873 12.6979C29.9731 12.1121 29.9731 11.1623 29.3873 10.5765L19.8414 1.03061C19.2556 0.444818 18.3058 0.444818 17.7201 1.03061C17.1343 1.61639 17.1343 2.56614 17.7201 3.15193L26.2053 11.6372L17.7201 20.1225C17.1343 20.7083 17.1343 21.658 17.7201 22.2438C18.3058 22.8296 19.2556 22.8296 19.8414 22.2438L29.3873 12.6979ZM0.32666 13.1372L28.3267 13.1372V10.1372L0.32666 10.1372L0.32666 13.1372Z"
+                                                fill="#FDF5F5" />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+
+
+                            <!-- ! video types end -->
+
+                        </div>
+
+                        <script type="text/javascript">
+
+                            const videoTypes__types = document.querySelector('.videoTypes__types')
+                            const videoTypes__types__typesArray = videoTypes__types.querySelectorAll('.videoTypes__type')
+                            const videoTypes__types__typesArray_octagons = videoTypes__types.querySelectorAll('.videoTypes__type_octagon')
+                            //
+
+
+                            // const breakpoint_large = 11
+                            const breakpoint_middle = 768
+                            const breakpoint_small = 450
+
+                            let w = videoTypes__types.clientWidth
+
+
+
+                            const percentIntoPx = (v) => { return ((v / 100) * w) }
+
+                            /**
+                            in % relative to "videoTypes__types" container
+                            
+                            */
+                            const changeVideoTypesSizes = (props) => {
+                                // 
+                                let {
+                                    wrapperHeight,
+                                    fontSize,
+                                    arrowSize,
+                                    sizes,
+                                    octagonSize
+                                } = props
+
+                                console.log(w)
+
+                                // padding = percentIntoPx(padding)
+                                fontSize = percentIntoPx(fontSize)
+                                arrowSize = percentIntoPx(arrowSize)
+                                // octagonSize = percentIntoPx(octagonSize)
+                                wrapperHeight = percentIntoPx(wrapperHeight)
+
+
+                                videoTypes__types.style.height = `${wrapperHeight}px`
+
+
+
+                                videoTypes__types__typesArray.forEach((el) => {
+                                    // el.style.padding = `${padding}px`
+                                    el.style.fontSize = `${fontSize}px`
+
+
+                                    let arrowEl = el.querySelector('.videoTypes__type__arrow__frame')
+
+                                    arrowEl.style.width = `${arrowSize}px`
+                                    arrowEl.style.height = `${arrowSize}px`
+                                })
+
+                                videoTypes__types__typesArray_octagons.forEach((el) => {
+                                    el.querySelector('.videoTypes__type_octagon__text').style.fontSize = `${fontSize}px`
+
+                                    let arrowEl = el.querySelector('.videoTypes__type__arrow__frame')
+                                    arrowEl.style.width = `${arrowSize}px`
+                                    arrowEl.style.height = `${arrowSize}px`
+
+                                    //     el.style.width = `${octagonSize}px`
+                                })
+
+                                console.log(sizes)
+
+                                Object.keys(sizes).forEach((k) => {
+                                    let t = videoTypes__types.querySelector(`#videoTypes__type${k}`)
+
+                                    let width = percentIntoPx(sizes[k][0])
+                                    let height = percentIntoPx(sizes[k][1])
+
+                                    t.style.width = `${width}px`
+                                    t.style.height = `${height}px`
+                                })
+
+                                let b = [11, 12]
+
+                                b.forEach((k) => {
+                                    let t = videoTypes__types.querySelector(`#videoTypes__type${k}`)
+
+                                    let size = percentIntoPx(octagonSize)
+
+                                    t.style.width = `${size}px`
+                                    t.style.height = `${size}px`
+                                })
+                            }
+
+
+
+                            /**
+                            function that changes video types positions in videoTypes__types
+                            
+                            receives object where 
+                            - key is number part of element id, 
+                            for example: videoTypes__type10 -> key - 10
+                            - value  is a list of two numbers: 
+                            first number - top, second - left
+                            there are values of css properties in %
+                            
+                            
+                                {
+                                    1:[30, 2],
+                                    10:[20, 5]
+                                }
+                            
+                            */
+                            const changeVideoTypesPositions = (a) => {
+
+                                Object.keys(a).forEach((k) => {
+                                    let t = videoTypes__types.querySelector(`#videoTypes__type${k}`)
+
+                                    let top = percentIntoPx(a[k][0])
+                                    let left = percentIntoPx(a[k][1])
+
+                                    t.style.top = `${top}px`
+                                    t.style.left = `${left}px`
+                                })
+                            }
+
+
+                            const fixVideoTypesSizes = () => {
+
+                                let window_width = window.innerWidth
+
+
+                                switch (true) {
+                                    case (window_width > breakpoint_middle): // ! large
+                                        console.log("large")
+
+                                        let itemHeight = 10
+
+                                        changeVideoTypesSizes({
+                                            // 'padding': 2,
+                                            'fontSize': 1.96,
+                                            'arrowSize': 5.824,
+                                            'octagonSize': 24.03,
+                                            'wrapperHeight': 70.9,
+                                            'sizes': {
+                                                1: [24.8, itemHeight],
+                                                2: [22.27, itemHeight],
+                                                3: [22.68, itemHeight],
+                                                4: [26.09, itemHeight],
+                                                5: [25.93, itemHeight],
+                                                6: [29.18, itemHeight],
+                                                7: [24.634, itemHeight],
+                                                8: [29.26, itemHeight],
+                                                9: [24.47, itemHeight],
+                                                10: [31.86, itemHeight],
+
+                                            }
+                                        })
+
+                                        changeVideoTypesPositions({
+                                            1: [7.79, 15.9],
+                                            2: [35.3, 5.1],
+                                            3: [45.2, 2.87],
+                                            4: [50.4, 18.65],
+                                            5: [48.12, 41.30],
+                                            6: [32.9, 59.0],
+                                            7: [22.08, 71.5],
+                                            8: [-1.12, 62.05],
+                                            9: [18.17, 36.235],
+                                            10: [32.68, 45.59],
+                                            11: [27.6, 23],
+                                            12: [38.7, 70.25]
+                                        })
+
+                                        break;
+                                    case (window_width <= breakpoint_middle && window_width > breakpoint_small): // middle
+                                        console.log("breakpoint_middle")
+
+                                        let iH = 13.864
+
+
+                                        changeVideoTypesSizes({
+                                            'padding': 3.25,
+                                            'fontSize': 2.95,
+                                            'arrowSize': 7.39,
+                                            'octagonSize': 34.83,
+                                            'wrapperHeight': 108.99,
+                                            'sizes': {
+                                                1: [35.69, iH],
+                                                2: [31.7, iH],
+                                                3: [32.44, iH],
+                                                4: [37.75, iH],
+                                                5: [37.31, iH],
+                                                6: [42.18, iH],
+                                                7: [35.39, iH],
+                                                8: [42.33, iH],
+                                                9: [35.1, iH],
+                                                10: [46.31, iH]
+                                            }
+                                        })
+
+                                        changeVideoTypesPositions({
+                                            1: [9.7, 4.1],
+                                            2: [-1.7, 38.6],
+                                            3: [51.4, 66.15],
+                                            4: [-1.2, 20.0],
+                                            5: [70.5, 2.68],
+                                            6: [79.2, 22.7],
+                                            7: [31.9, 64.71],
+                                            8: [45.3, 32.7],
+                                            9: [31.5, 31.9],
+                                            10: [24.78, 46.7],
+                                            11: [35.8, -5.3],
+                                            12: [58.2, 67.7],
+
+                                        })
+                                        break;
+                                    case (window_width <= breakpoint_small): // small
+                                        console.log("breakpoint_small")
+
+                                        let tH = 16.33
+                                        let lH = 22.66
+
+
+                                        let shift_x = -5
+
+                                        changeVideoTypesSizes({
+                                            'padding': 5,
+                                            'fontSize': 5.0,
+                                            'arrowSize': 10,
+                                            'octagonSize': 63.20,
+                                            'wrapperHeight': 208,
+                                            'sizes': {
+                                                1: [47, lH],
+                                                2: [40, tH],
+                                                3: [41, tH],
+                                                4: [50.33, lH],
+                                                5: [49.66, tH],
+                                                6: [58.66, lH],
+                                                7: [46.33, lH],
+                                                8: [59.0, lH],
+                                                9: [46.0, tH],
+                                                10: [66.0, lH]
+                                            }
+                                        })
+
+                                        changeVideoTypesPositions({
+                                            1: [8, 5.2 + shift_x],
+                                            2: [3.55, 37.5 + shift_x],
+                                            3: [116.75, 6 + shift_x],
+                                            4: [153.3, 12.75 + shift_x],
+                                            5: [59.5, 53.5 + shift_x],
+                                            6: [71.5, 55.9 + shift_x],
+                                            7: [36.1, 42.09 + shift_x],
+                                            8: [124.7, 9.3 + shift_x],
+                                            9: [110.5, 47.6 + shift_x],
+                                            10: [136.21, 46.2 + shift_x],
+                                            11: [46.8, -9.6 + shift_x],
+                                            12: [144.6, 53.1 + shift_x]
+                                        })
+                                        break;
+                                    default:
+                                        throw 'Something went wrong in fixVideoTypesSizes'
+                                        break;
+                                }
+                            }
+
+                            // run
+                            //
+                            fixVideoTypesSizes()
+
+                            window.addEventListener('resize', () => {
+                                if (w == videoTypes__types.clientWidth) {
+                                    return
+                                }
+
+                                w = videoTypes__types.clientWidth
+                                fixVideoTypesSizes()
+                            })
+
+                        </script>
+
+
+
+                        <div class="container">
+                            <div class="videoTypes__text"> <span class="videoTypes__text__s"> Это лишь часть услуг.
+                                </span>
+                                <p class="videoTypes__text__b"> Не нашли то, что искали? <br />
+                                    Просто <a href="tel:10101" class="videoTypes__text__b__a">позвоните</a> нам! </p>
+                            </div>
+                        </div>
+
+
+                        <div id="videoTypes__popUp" class="videoTypes__popUp">
+                            <div class="videoTypes__popUp__content">
+                                hello js-логика готова, нужен макет для вёрстки<br>
+                                <span>
+                                    заказать
+                                    <span class="videoTypes__popUp__data-videoName">
+                                        None
+                                    </span>
+                                </span>
+
+                                <form>
+                                    <input type="text" />
+                                    <input type="text" />
+                                    <button>
+                                        send
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <script>
+                            const videoTypes__popUP = document.getElementById('videoTypes__popUp')
+                            const videoTypes__popUP_activeClass = 'videoTypes__popUP_active'
+
+                            let videoTypes__popUp__data_videoName = videoTypes__popUP.querySelector('.videoTypes__popUp__data-videoName')
+
+                            videoTypes__popUP.querySelector('.videoTypes__popUp__content').addEventListener('click', (e) => {
+                                e.stopPropagation()
+                            })
+
+                            videoTypes__popUP.addEventListener('click', closePopUP)
+
+
+                            function changePopUpContent(props) {
+                                const { videoType } = props
+
+                                videoTypes__popUp__data_videoName.innerText = videoType
+                            }
+
+
+                            function openPopUP() {
+                                console.log(videoTypes__popUP)
+
+                                if (!videoTypes__popUP.classList.contains(videoTypes__popUP_activeClass)) {
+                                    videoTypes__popUP.classList.add(videoTypes__popUP_activeClass)
+                                }
+                            }
+
+                            function closePopUP() {
+                                if (videoTypes__popUP.classList.contains(videoTypes__popUP_activeClass)) {
+                                    videoTypes__popUP.classList.remove(videoTypes__popUP_activeClass)
+                                }
+                            }
+
+
+                            [
+                                ...videoTypes__types__typesArray, ...videoTypes__types__typesArray_octagons
+                            ].forEach((el) => {
+                                el.addEventListener('click', () => {
+                                    console.log(el.getAttribute('id'))
+
+                                    openPopUP()
+
+                                    changePopUpContent({
+                                        'videoType': el.getAttribute('id')
+                                    })
+                                })
+                            })
+
+
+                        </script>
+
+
+                    </section>
+
+
+
+
+                    <section id="videoCreating" class="videoCreating">
+                        <div class="container">
+                            <h2 class="gTitle_c">
+                                Как создаются видеоролики?
+                            </h2>
+                        </div>
+
+                        <div class="videoCreating__content">
+                            <div class="container">
+                                <div class="videoCreating__contentScrollable">
+                                    <div class="videoCreating__contentScrollable__content">
+                                        <div class="videoCreating__plan"> бриф / смета / договор / сценарий /
+                                            раскадровка / съемка / монтаж / корректировки / размещение </div>
+                                        <div class="videoCreating__itemsWrapper">
+                                            <div class="videoCreating__itemsImagesWrapper">
+                                                <!-- START -->
+
+                                                <div class="videoCreating__itemImg">
+                                                    <img src="./images/index/videosCreating__itemImg_1.jpg" />
+                                                </div>
+
+                                                <div class="videoCreating__itemImg">
+                                                    <img src="./images/index/videosCreating__itemImg_2.jpg" />
+                                                </div>
+
+                                                <div class="videoCreating__itemImg">
+                                                    <img src="./images/index/videosCreating__itemImg_3.jpg" />
+                                                </div>
+
+                                                <div class="videoCreating__itemImg">
+                                                    <img src="./images/index/videosCreating__itemImg_4.jpg" />
+                                                </div>
+
+                                                <div class="videoCreating__itemImg">
+                                                    <img src="./images/index/videosCreating__itemImg_5.jpg" />
+                                                </div>
+
+                                                <!-- END -->
+                                            </div>
+                                            <div class="videoCreating__icons"></div>
+                                            <div class="videoCreating__itemsTextsWrapper">
+                                                <!-- START -->
+
+                                                <div class="videoCreating__itemText"> <span
+                                                        class="videoCreating__itemText__number"> 1 </span>
+                                                    <div class="videoCreating__itemText__content">
+                                                        <h5 class="videoCreating__itemText__title"> Бриф </h5>
+                                                        <p class="videoCreating__itemText__description">
+                                                            Составляем бриф вместе с менеджером. Предлагаем креативные
+                                                            идеи
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="videoCreating__itemText">
+                                                    <span class="videoCreating__itemText__number">
+                                                        2
+                                                    </span>
+                                                    <div class="videoCreating__itemText__content">
+                                                        <h5 class="videoCreating__itemText__title">
+                                                            Договор
+                                                        </h5>
+                                                        <p class="videoCreating__itemText__description">
+                                                            Составляем смету, утверждаем и подписываем договор
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="videoCreating__itemText">
+                                                    <span class="videoCreating__itemText__number">
+                                                        3
+                                                    </span>
+                                                    <div class="videoCreating__itemText__content">
+                                                        <h5 class="videoCreating__itemText__title">
+                                                            Съемка
+                                                        </h5>
+                                                        <p class="videoCreating__itemText__description">
+                                                            Создаём сценарий, раскадровку, согласовываем и проводим
+                                                            съёмку
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="videoCreating__itemText">
+                                                    <span class="videoCreating__itemText__number">
+                                                        4
+                                                    </span>
+                                                    <div class="videoCreating__itemText__content">
+                                                        <h5 class="videoCreating__itemText__title">
+                                                            Монтаж
+                                                        </h5>
+                                                        <p class="videoCreating__itemText__description">
+                                                            Монтируем и вносим коррективы, согласовываем финальную
+                                                            версию
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="videoCreating__itemText">
+                                                    <span class="videoCreating__itemText__number">
+                                                        5
+                                                    </span>
+                                                    <div class="videoCreating__itemText__content">
+                                                        <h5 class="videoCreating__itemText__title">
+                                                            Результат
+                                                        </h5>
+                                                        <p class="videoCreating__itemText__description">
+                                                            Отправляем ролик, исходники, помогаем
+                                                            с размещением
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- END -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <script>
+                                const videoCreating__contentScrollableEl = (document.getElementById('videoCreating')).querySelector('.videoCreating__contentScrollable')
+
+
+                                let isDown = false;
+                                let startX;
+                                let scrollLeft;
+
+                                videoCreating__contentScrollableEl.addEventListener('mousedown', (e) => {
+                                    isDown = true;
+                                    videoCreating__contentScrollableEl.classList.add('active');
+                                    startX = e.pageX - videoCreating__contentScrollableEl.offsetLeft;
+                                    scrollLeft = videoCreating__contentScrollableEl.scrollLeft;
+                                });
+                                videoCreating__contentScrollableEl.addEventListener('mouseleave', () => {
+                                    isDown = false;
+                                    videoCreating__contentScrollableEl.classList.remove('active');
+                                });
+                                videoCreating__contentScrollableEl.addEventListener('mouseup', () => {
+                                    isDown = false;
+                                    videoCreating__contentScrollableEl.classList.remove('active');
+                                });
+                                videoCreating__contentScrollableEl.addEventListener('mousemove', (e) => {
+                                    if (!isDown) return;
+                                    e.preventDefault();
+                                    const x = e.pageX - videoCreating__contentScrollableEl.offsetLeft;
+                                    const walk = (x - startX) * 3; //scroll-fast
+                                    videoCreating__contentScrollableEl.scrollLeft = scrollLeft - walk;
+                                });
+
+                            </script>
+                    </section>
+
+
+                    <section id="suggestion" class="suggestion">
+                        <div class="container">
+                            <h2 class="gTitle_c">
+                                Получите коммерческое предложение прямо сейчас!
+                            </h2>
+                            <p class="suggestion__hint">
+                                Выберите где вы будете размещать ролик, а мы отправим коммерческое предложение
+                                и подборку кейсов.
+                                Расслабьтесь, это ни к чему не обязывает!
+                            </p>
+
+                            <div class="suggestion__itemsWrapper">
+
+                                <div class="suggestion__item">
+                                    <img src="./images/index/suggestion__itemImg_1.jpg" alt=""
+                                        class="suggestion__item__img" />
+                                    <span class="suggestion__item__title">
+                                        Для выставки
+                                    </span>
+
+                                    <div class="suggestion__item__contentOnHover">
+                                        <div class="suggestion__item__contentOnHover__content">
+                                            <div>
+                                                <h5 class="suggestion__item__contentOnHover__title">
+                                                    Для выставки
+                                                </h5>
+                                                <p class="suggestion__item__contentOnHover__description">
+                                                    Видеопрезентация для крупной отраслевой выставки или бизнес-форума.
+                                                    Сделаем стильно, информативно, а главное, не как у всех.
+                                                </p>
+                                            </div>
+                                            <span class="suggestion__item__contentOnHover__btn">
+                                                Получить КП
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="suggestion__item">
+                                    <img src="./images/index/suggestion__itemImg_2.jpg" alt=""
+                                        class="suggestion__item__img" />
+                                    <span class="suggestion__item__title">
+                                        Для сайта
+                                    </span>
+
+                                    <div class="suggestion__item__contentOnHover">
+                                        <div class="suggestion__item__contentOnHover__content">
+                                            <div class="suggestion__item__contentOnHover__content__group">
+                                                <h5 class="suggestion__item__contentOnHover__title">
+                                                    Для сайта
+                                                </h5>
+                                                <p class="suggestion__item__contentOnHover__description">
+                                                    Знаем, какой ролик повысит рейтинг сайта в поисковой выдаче и
+                                                    увеличит коэффициент конверсии посетителя в заказчика.
+                                                </p>
+                                            </div>
+                                            <span class="suggestion__item__contentOnHover__btn">
+                                                Получить КП
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="suggestion__item">
+                                    <img src="./images/index/suggestion__itemImg_3.jpg" alt=""
+                                        class="suggestion__item__img" />
+                                    <span class="suggestion__item__title">
+                                        Для соц.сетей
+                                    </span>
+
+                                    <div class="suggestion__item__contentOnHover">
+                                        <div class="suggestion__item__contentOnHover__content">
+                                            <div>
+                                                <h5 class="suggestion__item__contentOnHover__title">
+                                                    Для соц.сетей
+                                                </h5>
+                                                <p class="suggestion__item__contentOnHover__description">
+                                                    Охваты и вовлеченность у постов с видео в 2 раза выше, чем у
+                                                    статического креатива. Мы мониторим тренды социальных сетей, чтобы
+                                                    ваш видео-контент был максимально виральным.
+                                                </p>
+                                            </div>
+                                            <span class="suggestion__item__contentOnHover__btn">
+                                                Получить КП
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <script type="text/javascript">
+                            let activeClass = 'suggestion__item_active'
+
+                            const enable_suggestion__item = (el) => {
+                                !el.classList.contains(activeClass) && el.classList.add(activeClass)
+                            }
+
+                            const disable_suggestion__item = (el) => {
+                                el.classList.contains(activeClass) && el.classList.remove(activeClass)
+                            }
+
+                            const toggle_suggestion_item = (el) => {
+                                el.classList.contains(activeClass) ? el.classList.remove(activeClass) : el.classList.add(activeClass)
+                            }
+
+                            document.querySelectorAll('.suggestion__item').forEach((el) => {
+
+                                el.addEventListener('mouseover', () => {
+                                    //  enable_suggestion__item(el)
+                                })
+
+                                el.addEventListener('click', () => {
+                                    toggle_suggestion_item(el)
+                                })
+
+                                el.addEventListener('mouseover', () => {
+                                    // enable_suggestion__item(el)
+                                })
+                            })
+                        </script>
+                    </section>
+
+
+
+                    <section id="whoWeWorkedWith" class="whoWeWorkedWith">
+                        <div class="container">
+                            <h2 class="gTitle_c whoWeWorkedWith__title">
+                                С кем работала наша команда
+                            </h2>
+
+                            <div class="whoWeWorkedWith__itemsGrid">
+
+
+                                <div class="whoWeWorkedWith__yourLogo">
+                                    <b class="whoWeWorkedWith__yourLogo__text">
+                                        Ваш
+                                        лого
+                                    </b>
+                                    <img src="./images/index/whoWeWorkedWith__yourLogo__arrow.png" alt="arrow"
+                                        class="whoWeWorkedWith__yourLogo__arrow" />
+                                </div>
+
+
+                                <div class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item1.png" alt="" />
+                                </div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item2.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item3.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item4.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item5.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item6.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item7.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item8.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item9.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item10.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item11.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item12.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item13.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item14.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item15.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item16.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item17.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item18.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item19.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item20.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item21.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item22.png"
+                                        alt="" /></div>
+                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item23.png"
+                                        alt="" /></div>
+
+
+
+                            </div>
+                    </section>
+
+
+                    <!-- ! CONTENT END -->
+                </div>
+
+                <footer class="footer">
+                    <div class="container">
+                        <h2 class="gTitle_c footer__title">
+                            У вас остались
+                            вопросы?
+                        </h2>
+
+                        <div class="footer__content">
+                            <div class="footer__contacts">
+
+                                <h6 class="footer__contacts__title">
+                                    Свяжитесь с нами
+                                </h6>
+
+                                <div class="footer__contacts__content">
+                                    <p class="footer__contacts__phoneEmail">
+                                        <a href="tel: 8 800 222 83 30">8 800 222 83 30</a> <br />
+                                        <a href="#">sale@doqo.studio</a>
+                                    </p>
+                                    <div class="footer__contacts__socialNetworks">
+
+
+
+
+                                        <a href="#" class="footer__contacts__socialNetworks__item">
+                                            <div class="footer__contacts__socialNetworks__item__icon">
+                                                <svg width="34" height="20" viewBox="0 0 34 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M33.2172 1.3421C33.4563 0.552631 33.2172 0 32.1011 0H28.3808C27.4241 0 26.9989 0.5 26.7598 1.05263C26.7598 1.05263 24.873 5.63158 22.1891 8.57895C21.3121 9.44737 20.9401 9.71053 20.4618 9.71053C20.2226 9.71053 19.8772 9.44737 19.8772 8.6579V1.3421C19.8772 0.394736 19.6114 0 18.8142 0H12.968C12.3834 0 12.0113 0.447368 12.0113 0.842104C12.0113 1.73684 13.34 1.94737 13.4995 4.42105V9.84211C13.4995 11.0263 13.2869 11.2368 12.8085 11.2368C11.5596 11.2368 8.47702 6.6579 6.67001 1.39474C6.29798 0.421053 5.95252 0 4.99586 0H1.27554C0.21259 0 0 0.5 0 1.05263C0 2.02632 1.24897 6.86842 5.8728 13.2632C8.95535 17.6316 13.2869 20 17.2198 20C19.5848 20 19.8772 19.4737 19.8772 18.5789V15.2632C19.8772 14.2105 20.0897 14 20.8604 14C21.4184 14 22.3485 14.2632 24.5541 16.3684C27.0786 18.8684 27.5038 20 28.9122 20H32.6326C33.6955 20 34.227 19.4737 33.9081 18.4474C33.5626 17.4211 32.3668 15.9211 30.7724 14.1316C29.8955 13.1053 28.5933 12.0263 28.2213 11.4737C27.6633 10.7632 27.8227 10.4474 28.2213 9.84211C28.2213 9.81579 32.7654 3.5 33.2172 1.3421Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </div>
+                                        </a>
+
+
+                                        <a href="#" class="footer__contacts__socialNetworks__item">
+                                            <div class="footer__contacts__socialNetworks__item__icon">
+                                                <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M26.2 4.47821C23.317 1.59189 19.483 0.00167359 15.3982 0C6.98159 0 0.131346 6.84969 0.12806 15.2689C0.126883 17.9603 0.830038 20.5872 2.16637 22.9029L0 30.8157L8.0949 28.6922C10.3252 29.9088 12.8364 30.55 15.3921 30.5509H15.3983C23.814 30.5509 30.6649 23.7005 30.6684 15.2811C30.6699 11.2009 29.083 7.36441 26.2 4.47821ZM15.3983 27.972H15.3931C13.1158 27.9711 10.882 27.3592 8.93337 26.2029L8.46997 25.9279L3.66634 27.1879L4.94855 22.5044L4.64675 22.0242C3.37631 20.0035 2.70532 17.6679 2.70632 15.2698C2.70904 8.27205 8.40272 2.579 15.4034 2.579C18.7933 2.58005 21.98 3.902 24.3763 6.301C26.7725 8.7 28.0914 11.8888 28.0901 15.28C28.0872 22.2783 22.3937 27.972 15.3983 27.972Z"
+                                                        fill="white" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M22.36 18.4665C21.9785 18.2755 20.1026 17.3526 19.7528 17.2252C19.4031 17.0978 19.1487 17.0342 18.8944 17.4161C18.6401 17.798 17.9089 18.6575 17.6863 18.9122C17.4637 19.1667 17.2411 19.1988 16.8596 19.0076C16.4781 18.8166 15.2487 18.4138 13.7914 17.1139C12.6571 16.1021 11.8914 14.8528 11.6687 14.4707C11.4462 14.0888 11.645 13.8823 11.8361 13.692C12.0077 13.521 12.2177 13.2464 12.4085 13.0236C12.5992 12.8009 12.6628 12.6416 12.79 12.3871C12.9172 12.1324 12.8536 11.9096 12.7582 11.7187C12.6628 11.5277 11.8997 9.64969 11.5818 8.8856C11.272 8.14173 10.9575 8.24251 10.7233 8.23067C10.5011 8.21958 10.2464 8.21729 9.99204 8.21729C9.73772 8.21729 9.32428 8.3128 8.97462 8.69469C8.6249 9.0767 7.63916 9.99984 7.63916 11.8777C7.63916 13.7557 9.00636 15.57 9.19715 15.8246C9.38787 16.0794 11.8876 19.9331 15.715 21.5858C16.6253 21.979 17.3361 22.2137 17.8901 22.3895C18.8042 22.6799 19.6359 22.6389 20.2933 22.5407C21.0264 22.4311 22.5508 21.6177 22.8687 20.7266C23.1867 19.8352 23.1867 19.0712 23.0912 18.9121C22.9959 18.753 22.7415 18.6575 22.36 18.4665Z"
+                                                        fill="white" />
+                                                </svg>
+
+                                            </div>
+                                        </a>
+
+
+                                        <a href="#" class="footer__contacts__socialNetworks__item">
+                                            <div class="footer__contacts__socialNetworks__item__icon">
+                                                <svg width="28" height="26" viewBox="0 0 28 26" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M27.5844 0.267852C27.222 -0.0637031 26.5695 -0.100543 25.4822 0.231012C24.721 0.452049 18.0157 3.03081 12.0715 5.53589C6.74352 7.7831 2.39412 9.73558 1.88669 9.99346C1.30677 10.1777 0.0744367 10.7302 0.00194668 11.5776C-0.0342983 12.1301 0.436887 12.6091 1.30677 13.0143C2.24914 13.4932 6.41732 14.8931 7.2872 15.1878C7.57716 16.2562 9.35316 22.3715 9.4619 22.7399C9.57063 23.2925 9.93308 23.624 10.1143 23.7346C10.1506 23.7346 10.1868 23.8082 10.2593 23.8451C10.3318 23.9188 10.4768 23.9556 10.6217 23.9556C10.803 23.9556 11.0567 23.8451 11.2741 23.6977C12.3977 22.7767 14.3187 20.7137 14.8624 20.1243C17.2183 22.04 19.828 24.1398 20.0817 24.3977L20.1179 24.4345C20.6979 24.9134 21.314 25.2081 21.8577 25.2081C22.0389 25.2081 22.2201 25.1713 22.4014 25.0976C23.0175 24.8766 23.4887 24.2872 23.6337 23.4399C23.6337 23.403 23.6699 23.2925 23.7424 23.0715C24.7573 18.5402 25.5909 14.5247 26.2433 11.1723C26.8595 7.85677 27.4032 4.65174 27.6931 2.92029C27.7294 2.47822 27.8019 2.14666 27.8381 1.92563C27.9469 1.29936 27.9831 0.599407 27.5844 0.267852ZM22.4739 5.38853L18.8131 8.85144C16.276 11.246 12.9414 14.3405 10.7305 16.3667C10.7305 16.3667 10.7305 16.3667 10.7305 16.4035L10.6942 16.4404C10.6942 16.4404 10.6942 16.4772 10.658 16.4772C10.658 16.514 10.658 16.514 10.6217 16.5509V16.5877C10.6217 16.5877 10.6217 16.5877 10.6217 16.6246C10.4768 18.356 10.1868 21.3032 10.0781 22.6294C10.0781 22.6294 10.0781 22.6294 10.0781 22.5925C9.96933 22.2242 8.26581 16.3298 7.90336 15.1141L22.3289 5.38853C22.3289 5.35169 22.4014 5.31485 22.4376 5.27801C22.4739 5.27801 22.4739 5.24117 22.5101 5.24117C22.5463 5.24117 22.5463 5.24117 22.5826 5.20433C22.5826 5.24117 22.5463 5.31485 22.4739 5.38853Z"
+                                                        fill="white" />
+                                                </svg>
+
+                                            </div>
+                                        </a>
+
+
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="footer__bottom">
+                                    <p class="footer__bottom__text1">
+                                        ООО "БРАВА", ОГРН 1136671000300
+                                    </p>
+
+                                    <p class="footer__bottom__text2">
+                                        © 2022 All Rights Reserved
+                                    </p>
+                                </div>
+
+
+                            </div>
+                            <div class="footer__form">
+
+                                <h6 class="footer__form__title">
+                                    Оставьте заявку
+                                </h6>
+                                <p class="footer__form__text">
+                                    наш менеджер перезвонит вам в течение 1 часа
+                                </p>
+
+                                <form class="footer__form__form" onsubmit="">
+
+                                    <!--  -->
+
+                                    <fieldset class="gFormInput footer__form__form__input">
+                                        <div class="gFormInput__inputWrapper">
+                                            <input type="text" placeholder="Имя" class="gFormInput__input" required />
+                                            <span class="gFormInput__icon"></span>
+                                        </div>
+                                        <span class="gFormInput__hint"
+                                            data-defaultmessage="некорректно введено имя"></span>
+                                    </fieldset>
+
+
+                                    <fieldset class="gFormInput footer__form__form__input">
+                                        <div class="gFormInput__inputWrapper">
+                                            <input type="tel" placeholder="Телефон" class="gFormInput__input"
+                                                required />
+                                            <span class="gFormInput__icon"></span>
+                                        </div>
+                                        <span class="gFormInput__hint"
+                                            data-defaultmessage="некорректно введен телефон"></span>
+                                    </fieldset>
+
+
+                                    <fieldset class="gFormInput footer__form__form__input">
+                                        <div class="gFormInput__inputWrapper">
+                                            <input type="Email" placeholder="Email" class="gFormInput__input"
+                                                required />
+                                            <span class="gFormInput__icon"></span>
+                                        </div>
+                                        <span class="gFormInput__hint"
+                                            data-defaultmessage="некорректно введен Email"></span>
+                                    </fieldset>
+
+
+                                    <textarea placeholder="Комментарий"
+                                        class="gFormTextarea footer__form__form__textarea"></textarea>
+                                    <button class="gFormButton footer__form__form__button">
+                                        Отправить
+                                    </button>
+
+                                    <p class="footer__form__form__сonsentToTheProcessingOfPersonalData">
+                                        Нажимая кнопку «Отправить», Вы даете согласие на обработку персональных
+                                        данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ
+                                        «О персональных данных», на условиях и для целей, определенных в
+                                        <a href="#"
+                                            class="footer__form__form__сonsentToTheProcessingOfPersonalData__link">Согласии
+                                            на обработку персональных данных
+                                        </a>
+                                    </p>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //
+
+        const navigation = document.querySelector(".navigation")
+        const navigationActiveClassName = "navigation_active"
+
+        // open
+        document.getElementById("burger").addEventListener("click", () => {
+            !navigation.classList.contains(navigationActiveClassName) && navigation.classList.add(navigationActiveClassName)
+            document.body.style.overflowY = 'hidden'
+        })
+
+        // close
+        document.getElementById("closeMenu").addEventListener("click", () => {
+            navigation.classList.contains(navigationActiveClassName) && navigation.classList.remove(navigationActiveClassName)
+            document.body.style.overflowY = 'auto'
+        })
+
+
+        // navigation
+
+        // navigation__content
+
+
+        //    
+
+    </script>
+
+    <script type="text/javascript">
+
+        const icon_valid = '<svg width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.68066L8.03046 12.1981L8.7605 12.8815L9.49054 13.5649L20.425 1.88423L18.9649 0.517426L9.39726 10.738L1.36681 3.22058L0 4.68066Z" fill="black"/></svg>';
+
+        const icon_invalid = '<svg width="5" height="18" viewBox="0 0 5 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.36931 11.6639L0.81731 0.899902H4.22131L3.64631 11.6639H1.36931ZM2.51931 17.1609C1.98264 17.1609 1.53798 16.9846 1.18531 16.6319C0.832644 16.2792 0.656311 15.8576 0.656311 15.3669C0.656311 14.8762 0.832644 14.4622 1.18531 14.1249C1.53798 13.7722 1.98264 13.5959 2.51931 13.5959C3.05598 13.5959 3.49298 13.7722 3.83031 14.1249C4.16764 14.4622 4.33631 14.8762 4.33631 15.3669C4.33631 15.8576 4.16764 16.2792 3.83031 16.6319C3.49298 16.9846 3.05598 17.1609 2.51931 17.1609Z" fill="#C00000"/></svg>';
+
+
+        const addTouchedClass = (el) => {
+            !el.classList.contains('gFormInput_touched') && el.classList.add('gFormInput_touched')
+        }
+
+        const setFocusClass = (el) => {
+            el.querySelector(".gFormInput__inputWrapper").classList.add('gFormInput__inputWrapper_focused')
+        }
+
+        const clearFocusClass = (el) => {
+            el.querySelector(".gFormInput__inputWrapper").classList.remove('gFormInput__inputWrapper_focused')
+        }
+
+
+        function changeIcon(el, valid) {
+            console.log(valid)
+
+            let iconEl = el.querySelector('.gFormInput__icon')
+
+            if (valid) {
+                iconEl.innerHTML = icon_valid
+            } else {
+                iconEl.innerHTML = icon_invalid
+            }
+        }
+
+        function changeErrorMessage(el) {
+            let inputEl = el.querySelector(".gFormInput__input")
+
+            let hintEl = el.querySelector('.gFormInput__hint')
+
+            if (inputEl.checkValidity()) {
+                hintEl.innerText = ''
+
+                changeIcon(el = el, valid = true)
+
+            } else {
+                changeIcon(el = el, valid = false)
+
+                if (inputEl.value === '') {
+                    hintEl.innerText = 'Это поле должно быть заполнено'
+                } else {
+                    hintEl.innerText = hintEl.getAttribute('data-defaultmessage') || `Некорректно введен ${inputEl.getAttribute('name')}` || 'Это поле введено некорректно'
+                }
+            }
+        }
+
+
+        function handleTyping(el) {
+            // 
+            changeErrorMessage(el)
+
+        }
+
+        function handleBlur(el) {
+            // let inputEl = el.querySelector(".gFormInput__input")
+
+            changeErrorMessage(el)
+        }
+
+
+
+        document.querySelectorAll('.gFormInput').forEach((el) => {
+            let input = el.querySelector('input')
+
+            input.addEventListener('focus', (e) => setFocusClass(el))
+
+            input.addEventListener('blur', (e) => {
+                addTouchedClass(el)
+                clearFocusClass(el)
+                handleBlur(el)
+            })
+
+            if (input.required) {
+                input.addEventListener('input', (e) => {
+                    handleTyping(el)
+                })
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>
