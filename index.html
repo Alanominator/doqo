@@ -7,10 +7,10 @@
         Doqo
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="css/style.min.css?_v=20220901170500"> <!-- fonts -->
+    <link rel="stylesheet" href="css/style.min.css?_v=20220902012029"> <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&_v=20220901170500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&_v=20220902012029" rel="stylesheet">
 
     <script type="text/javascript">
         let ALLOWED = false
@@ -28,7 +28,44 @@
 
 </head>
 
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            const loader = document.getElementById('loader');
+            if (loader.classList.contains('loader_active')) {
+                loader.classList.remove('loader_active')
+            }
+        }, 0)
+    })
+</script>
+
 <body>
+    <div id="loader" class="loader loader_active">
+        <style>
+            .loader {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: orange;
+                z-index: 1000;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 5vw;
+            }
+
+            .loader_active {
+                display: flex;
+            }
+        </style>
+
+        <div>
+            ЗАГРУЗКА...
+        </div>
+
+    </div>
     <div class="main">
         <div class="main__navigation">
             <nav class="navigation">
@@ -174,7 +211,8 @@
                         <div class="portfolio__images">
                             <!-- items -->
 
-                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                            <div data-videolink="./videos/intro__testVideo.webm   ./videos/intro__testVideo.mp4"
+                                data-posterlink="./images/index/portfolio__img1.png" class="portfolio__images__item">
                                 <div class="portfolio__images__item__imgWrapper">
                                     <img src="./images/index/portfolio__img1.png" alt="img"
                                         class="portfolio__images__item__img" />
@@ -195,7 +233,8 @@
                             </div>
 
 
-                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                            <div data-videolink="./videos/intro__testVideo.webm"
+                                data-posterlink="./images/index/portfolio__img2.png" class="portfolio__images__item">
                                 <div class="portfolio__images__item__imgWrapper">
                                     <img src="./images/index/portfolio__img2.png" alt="img"
                                         class="portfolio__images__item__img" />
@@ -216,7 +255,8 @@
                             </div>
 
 
-                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                            <div data-videolink="./videos/intro__testVideo.webm"
+                                data-posterlink="./images/index/portfolio__img3.png" class="portfolio__images__item">
                                 <div class="portfolio__images__item__imgWrapper">
                                     <img src="./images/index/portfolio__img3.png" alt="img"
                                         class="portfolio__images__item__img" />
@@ -238,7 +278,8 @@
 
 
                             <!-- ! BIG -->
-                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                            <div data-videolink="./videos/intro__testVideo.webm ./videos/intro__testVideo.mp3"
+                                class="portfolio__images__item">
                                 <div class="portfolio__images__item__imgWrapper">
                                     <img src="./images/index/portfolio__img4.jpg" alt="img"
                                         class="portfolio__images__item__img" />
@@ -338,7 +379,8 @@
                                 </span>
                             </div>
 
-                            <div data-videolink="./videos/intro__testVideo.webm" class="portfolio__images__item">
+                            <div data-videolink="./videos/intro__testVideo.webm" data-posterlink=""
+                                class="portfolio__images__item">
                                 <div class="portfolio__images__item__imgWrapper">
                                     <img src="./images/index/portfolio__img7.png" alt="img"
                                         class="portfolio__images__item__img" />
@@ -368,8 +410,6 @@
                             <div class="portfolio__videoPlayer__videoWrapper">
                                 <video controls id="portfolio__videoPlayer__video"
                                     class="portfolio__videoPlayer__video">
-                                    <source src="movie.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
                                 </video>
                             </div>
                         </div>
@@ -386,8 +426,7 @@
                                 }
                             }
 
-                            function togglePlaying(e) {
-
+                            const toggleVideoPlaying = (e) => {
                                 if (e.code === 'Space') {
 
                                     if (isVideoPlaying(portfolio__video)) {
@@ -396,46 +435,125 @@
                                         portfolio__video.play()
                                     }
 
+                                    return true
                                 }
                             }
 
+                            const quitVideo = (e) => {
+                                if (e.code === 'Escape') {
+                                    portfolio__closeVideoPopup()
+
+                                    return true
+                                }
+                            }
+
+                            function handleKeyup(e) {
+                                console.log(e)
+
+                                let functions_to_call = [
+                                    toggleVideoPlaying,
+                                    quitVideo
+                                ]
+
+                                functions_to_call.forEach((func) => {
+                                    if (func(e)) {
+                                        return
+                                    }
+                                })
+                            }
+
                             function portfolio__openVideoPopup(props) {
-                                let { videoLink } = props
+                                let { videoLink, posterLink } = props
 
                                 portfolio__changePopUpContent({
-                                    "videoLink": videoLink
+                                    "videoLink": videoLink,
+                                    "posterLink": posterLink
                                 })
 
                                 !portfolio__videoPlayer.classList.contains('portfolio__videoPlayer_active') && portfolio__videoPlayer.classList.add('portfolio__videoPlayer_active')
 
                                 portfolio__video.load()
 
-                                window.addEventListener('keyup', togglePlaying)
+                                window.addEventListener('keyup', handleKeyup)
+                                portfolio__video.addEventListener('keyup', handleKeyup)
                                 window.addEventListener('keydown', preventPressingSpaceFromScroll)
                             }
 
                             function portfolio__closeVideoPopup() {
                                 portfolio__videoPlayer.classList.contains('portfolio__videoPlayer_active') && portfolio__videoPlayer.classList.remove('portfolio__videoPlayer_active')
 
-                                portfolio__changePopUpContent({
-                                    "videoLink": ''
-                                })
+                                portfolio__clearPopUpContent()
 
-                                window.removeEventListener('keyup', togglePlaying)
+                                window.removeEventListener('keyup', handleKeyup)
+                                portfolio__video.removeEventListener('keyup', handleKeyup)
                                 window.removeEventListener('keydown', preventPressingSpaceFromScroll)
                             }
 
-                            function portfolio__changePopUpContent(props) {
-                                const { videoLink } = props
 
-                                portfolio__video.querySelector('source').src = videoLink
+                            function portfolio__changePopUpContent(props) {
+                                const {
+                                    videoLink,
+                                    posterLink
+                                } = props
+
+                                portfolio__video.poster = posterLink
+
+                                const createSourceElement = (s) => {
+                                    let get_ext = /(?:\.([^.]+))?$/;
+
+                                    let ext = get_ext.exec(s)[1]
+
+//                                    let ext = "mp4"
+
+                                    return `<source src="${s}" type="video/${ext}" />`
+                                }
+
+                                const createVideoInnerHTML = () => {
+                                    let sources_list = videoLink.trim().split(/\s+/)
+
+                                    let sources = ''
+
+                                    console.log(sources)
+
+                                    sources_list.forEach((s) => {
+                                        sources += `${createSourceElement(s)}\n`
+                                    })
+
+                                    return `${sources}Ваш браузер не поддерживает воспроизведение видео`
+                                }
+
+                                /*
+                                    <source src="" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                */
+
+                                // portfolio__video.querySelector('source').src = videoLink
+
+                                if (videoLink === '') {
+                                    portfolio__video.innerHTML = ''
+                                } else {
+                                    portfolio__video.innerHTML = createVideoInnerHTML()
+                                }
+
+                            }
+
+
+
+                            function portfolio__clearPopUpContent() {
+                                portfolio__changePopUpContent({
+                                    "videoLink": '',
+                                    "posterLink": ''
+                                })
+
+
                             }
 
                             document.getElementById("portfolio").querySelectorAll('.portfolio__images__item').forEach((el) => {
 
                                 el.addEventListener('click', (e) => {
                                     portfolio__openVideoPopup({
-                                        "videoLink": el.getAttribute('data-videolink')
+                                        "videoLink": el.getAttribute('data-videolink'),
+                                        "posterLink": el.getAttribute('data-posterlink') || el.querySelector('.portfolio__images__item__img').getAttribute('src')
                                     })
                                 })
                             })
@@ -452,7 +570,8 @@
                                 <h2 class="gTitle price__title"> Узнайте стоимость ролика! </h2> <span
                                     class="price__booksImgWrapper"> <img src="./images/index/price__books.png" alt="img"
                                         class="price__booksImg" /> </span> <br />
-                                <p class="price__description"> Пройдите тест за 2 минуты и получите полный расчёт﻿
+                                <p class="price__description">
+                                    Пройдите тест за 2 минуты и получите полный расчёт﻿
                                     <br />
                                     + бонус « <b> 3 типовых сценария </b>»
                                 </p> <br />
@@ -1466,6 +1585,8 @@
                         </div>
 
                         <script type="text/javascript">
+                            const suggestionEl = document.getElementById('suggestion')
+
                             let activeClass = 'suggestion__item_active'
 
                             const enable_suggestion__item = (el) => {
@@ -1480,20 +1601,21 @@
                                 el.classList.contains(activeClass) ? el.classList.remove(activeClass) : el.classList.add(activeClass)
                             }
 
-                            document.querySelectorAll('.suggestion__item').forEach((el) => {
-
-                                el.addEventListener('mouseover', () => {
-                                    //  enable_suggestion__item(el)
-                                })
+                            suggestionEl.querySelectorAll('.suggestion__item').forEach((el) => {
 
                                 el.addEventListener('click', () => {
                                     toggle_suggestion_item(el)
                                 })
 
-                                el.addEventListener('mouseover', () => {
-                                    // enable_suggestion__item(el)
+                            })
+
+                            suggestionEl.querySelectorAll('.suggestion__item__contentOnHover__btn').forEach((el) => {
+                                el.addEventListener('click', (e) => {
+                                    e.stopPropagation()
                                 })
                             })
+
+
                         </script>
                     </section>
 
@@ -1518,54 +1640,97 @@
                                 </div>
 
 
-                                <div class="whoWeWorkedWith__item">
+                                <a href="#" class="whoWeWorkedWith__item">
                                     <img src="./images/index/whoWeWorkedWith__item1.png" alt="" />
-                                </div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item2.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item3.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item4.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item5.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item6.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item7.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item8.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item9.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item10.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item11.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item12.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item13.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item14.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item15.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item16.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item17.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item18.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item19.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item20.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item21.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item22.png"
-                                        alt="" /></div>
-                                <div class="whoWeWorkedWith__item"><img src="./images/index/whoWeWorkedWith__item23.png"
-                                        alt="" /></div>
+                                </a>
 
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item2.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item3.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item4.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item5.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item6.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item7.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item8.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item9.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item10.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item11.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item12.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item13.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item14.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item15.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item16.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item17.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item18.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item19.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item20.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item21.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item22.png" alt="" />
+                                </a>
+
+                                <a href="#" class="whoWeWorkedWith__item">
+                                    <img src="./images/index/whoWeWorkedWith__item23.png" alt="" />
+                                </a>
 
 
                             </div>
