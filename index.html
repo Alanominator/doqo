@@ -8,35 +8,64 @@
     Doqo
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="css/style.min.css?_v=20220913192201">
-<!-- fonts -->
+<link rel="stylesheet" href="css/style.min.css?_v=20220928195242">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&_v=20220913192201" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&_v=20220928195242" rel="stylesheet">
 
 <script type="text/javascript">
-         let ALLOWED = false
 
-         const askPassword = () => {
-             if (prompt("Type password") == '2029') {
-                 ALLOWED = true
-             }
-         }
+    /*
+        MULTILINE
+    */
 
-         do {
-             askPassword()
-        } while (!ALLOWED)
+        // let ALLOWED = false
+
+        // const askPassword = () => {
+        //     if (prompt("Type password") == '2029') {
+        //         ALLOWED = true
+        //     }
+        // }
+
+        // do {
+        //     askPassword()
+        // } while (!ALLOWED)
 </script>
+
     <script>
         (function (w, d, u) {
             var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0);
             var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
         })(window, document, 'https://cdn-ru.bitrix24.ru/b21004444/crm/site_button/loader_3_n0h15b.js');
     </script>
+
+
+    
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(88914691, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    
+
+
+
 </head>
 
 <script type="text/javascript">
-    window.addEventListener('load', function () {
+    window.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             const loader = document.getElementById('loader');
             if (loader.classList.contains('loader_active')) {
@@ -56,7 +85,7 @@
                 bottom: 0;
                 left: 0;
                 background: orange;
-                z-index: 1000;
+                z-index: 13000;
                 display: none;
                 justify-content: center;
                 align-items: center;
@@ -73,18 +102,43 @@
         </div>
 
     </div>
+
+
+    <noscript>
+        <div><picture><source srcset="https://mc.yandex.ru/watch/88914691" type="image/webp"><img src="https://mc.yandex.ru/watch/88914691" style="position:absolute; left:-9999px;" alt="" /></picture></div>
+    </noscript>
+    
+
     <div class="main">
         <div class="main__navigation">
             <nav class="navigation">
                 <div id="closeMenu" class="navigation__closeBtn"></div>
                 <div class="navigation__content">
                     <div class="navigation__logo"><picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt="logo" /></picture> </div>
+
                     <ul>
-                        <li> <a href="#"> Портфолио </a> </li>
-                        <li> <a href="#"> Команда </a> </li>
-                        <li> <a href="#"> Услуги </a> </li>
-                        <li> <a href="#"> Как мы работаем </a> </li>
+                        <li>
+                            <a href="#portfolio">
+                                Портфолио
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#statistics">
+                                Команда
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#videoTypes">
+                                Услуги
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#videoCreating">
+                                Как мы работаем
+                            </a>
+                        </li>
                     </ul>
+
                     <div class="navigation__contacts">
                         <span class="navigation__contacts__header">
                             Свяжитесь с нами
@@ -97,7 +151,7 @@
 
                         <div class="navigation__contacts__socialNetworks">
 
-                            <!-- VK -->
+                            
                             <a href="https://vk.com/doqo.studio" class="navigation__contacts__socialNetworks__item">
                                 <div class="navigation__contacts__socialNetworks__item__icon">
                                     <svg width="28" height="17" viewBox="0 0 28 17" fill="none"
@@ -109,7 +163,7 @@
                                 </div>
                             </a>
 
-                            <!-- WHATSAPP -->
+                            
                             <a href="https://whatsapp.com/doqo.studio"
                                 class="navigation__contacts__socialNetworks__item">
                                 <div class="navigation__contacts__socialNetworks__item__icon">
@@ -125,7 +179,7 @@
                                 </div>
                             </a>
 
-                            <!-- TELEGRAM -->
+                            
                             <a href="https://t.me/doqo_studio" class="navigation__contacts__socialNetworks__item">
                                 <div class="navigation__contacts__socialNetworks__item__icon">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -143,6 +197,7 @@
                     </div>
                 </div>
             </nav>
+
         </div>
         <div class="main__content">
             <div class="content">
@@ -150,8 +205,14 @@
 
                     <header class="header">
                         <div id="burger" class="burger">
-                            <div class="burger__content"> <span class="burger__line"></span> <span
-                                    class="burger__line"></span> <span class="burger__line"></span> </div>
+                            <div class="burger__content">
+                                <span class="burger__line">
+                                </span>
+                                <span class="burger__line">
+                                </span>
+                                <span class="burger__line">
+                                </span>
+                            </div>
                         </div>
                         <div class="container">
                             <div class="header__content">
@@ -161,23 +222,57 @@
                             </div>
                         </div>
                     </header>
-                    <!-- ! CONTENT START -->
+
+                    <script type="text/javascript">
+                        //
+
+                        const navigation = document.querySelector(".navigation")
+                        const navigationActiveClassName = "navigation_active"
+
+                        const burger = document.getElementById("burger")
+
+                        const closeMenuBtn = document.getElementById("closeMenu")
+
+                        const closeMenu = () => {
+                            navigation.classList.contains(navigationActiveClassName) && navigation.classList.remove(navigationActiveClassName)
+                            document.body.style.overflowY = 'auto'
+                        }
+
+                        const openMenu = () => {
+                            !navigation.classList.contains(navigationActiveClassName) && navigation.classList.add(navigationActiveClassName)
+                            document.body.style.overflowY = 'hidden'
+                        }
+
+                        // open
+                        burger.addEventListener("click", openMenu)
+
+                        // // close
+                        closeMenuBtn.addEventListener("click", closeMenu)
+
+                        navigation.querySelector('ul').addEventListener('click', closeMenu)
 
 
-<!-- sections start -->
+                    </script>
+                    
+
+
+
 
 <section id="intro" class="intro">
+
     <div class="container">
 
         <div class="intro__video">
             <div class="intro__video__videoWrapper">
-                <video loop autoplay muted poster="./images/index/intro__img_bottom.png" class="intro__video__video">
+                <video loading="lazy" loop autoplay muted poster="./images/index/intro__poster.jpeg"
+                    class="intro__video__video">
                     <source src="./videos/intro__testVideo.webm" type="video/webm">
                     <source src="./videos/intro__testVideo.mp4" type="video/mp4">
                 </video>
             </div>
 
             <div class="intro__video__mask">
+                
                 <div class="intro__video__mask__top">
                     <h2 class="intro__title intro__titleStart">
                         Рекламные видео-
@@ -192,8 +287,9 @@
 	c0-27.7-22.4-50.1-50.1-50.1c-27.7,0-50.1,22.4-50.1,50.1C1118.8,79.8,1141.2,102.2,1168.9,102.2z" />
                     </svg>
                 </div>
+                
                 <div class="intro__video__mask__bottom">
-                    <!-- <img src="./images/index/intro__img_bottom.png" alt="" /> -->
+                    
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1219 212"
                         style="enable-background:new 0 0 1219 212;" xml:space="preserve">
@@ -218,6 +314,7 @@
                         </g>
                     </svg>
                 </div>
+                
             </div>
 
         </div>
@@ -243,7 +340,6 @@
         </div>
     </div>
 
-
 </section>
 
 <section id="portfolio" class="portfolio">
@@ -251,7 +347,7 @@
         <h2 class="gTitle_c"> портфолио </h2>
     </div>
     <div class="portfolio__images">
-        <!-- ! items -->
+        
 
         <div data-videosources='[{"src": "./videos/intro__testVideo.webm", "ext": "webm" } ]'
             data-posterlink="./images/index/portfolio__img1.png" class="portfolio__images__item">
@@ -307,7 +403,7 @@
         </div>
 
 
-        <!-- ! BIG -->
+        
         <div data-videosources='[{"src": "./videos/intro__testVideo.webm", "ext": "webm" } ]' data-posterlink=""
             class="portfolio__images__item">
             <div class="portfolio__images__item__imgWrapper"><picture><source srcset="./images/index/portfolio__img4.webp" type="image/webp"><img src="./images/index/portfolio__img4.jpg" alt="img" class="portfolio__images__item__img" /></picture>
@@ -410,11 +506,11 @@
             </span>
         </div>
 
-        <!--  -->
+        
 
     </div>
 
-    <!--  -->
+    
 
     <div id="portfolio__videoPlayer" class="portfolio__videoPlayer">
         <div class="portfolio__videoPlayer__videoWrapper">
@@ -731,12 +827,39 @@
 
             <p class="gift__description"> Чек-лист по эффективному размещению роликов </p>
 
-            <form class="gift__form">
+
+            <form class="gift__form" id="gift__form" style="position: relative;">
+
+                <style>
+                    .gift__openFormDiv {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        
+                        z-index: 100;
+                        cursor: pointer;
+                    }
+                </style>
+
+                <script data-b24-form="click/1/rnbycf" data-skip-moving="true">
+
+                    (function (w, d, u) {
+                        var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0);
+                        var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+
+                    })(window, document, 'https://cdn-ru.bitrix24.ru/b21004444/crm/form/loader_1.js')
+
+                </script>
+                <div class="gift__openFormDiv">
+                    
+
+                </div>
 
 
                 <fieldset class="gFormInput gift__input">
                     <div class="gFormInput__inputWrapper">
-                        <input type="email" name="email" placeholder="Email" class="gFormInput__input" required />
+                        <input type="email" name="email" placeholder="Email" value="" class="gFormInput__input"
+                            required />
                         <span class="gFormInput__icon"></span>
                     </div>
                     <span class="gFormInput__hint" data-defaultmessage="некорректно введен email"></span>
@@ -745,16 +868,19 @@
 
                 <fieldset class="gFormInput gift__input">
                     <div class="gFormInput__inputWrapper">
-                        <input type="tel" placeholder="Телефон" class="gFormInput__input" required />
+                        <input type="tel" placeholder="Телефон" value="" class="gFormInput__input" required />
                         <span class="gFormInput__icon"></span>
                     </div>
                     <span class="gFormInput__hint" data-defaultmessage="некорректно введен номер телефона"></span>
                 </fieldset>
 
-                <button class="gift__button">
+                <button type="submit" class="gift__button" id="gift__button">
                     Получить
                 </button>
+
+
             </form>
+
         </div>
     </div>
 </section>
@@ -810,7 +936,7 @@
     </script>
     <div class="videoTypes__types">
 
-        <!-- types start -->
+        
 
         <div class="videoTypes__type" id="videoTypes__type1">
             Обучающие <br /> ролики
@@ -1003,7 +1129,7 @@
         </div>
 
 
-        <!-- ! video types end -->
+        
 
     </div>
 
@@ -1320,12 +1446,13 @@
     <div class="videoCreating__content">
         <div class="container">
             <div class="videoCreating__contentScrollable">
+
                 <div class="videoCreating__contentScrollable__content">
                     <div class="videoCreating__plan"> бриф / смета / договор / сценарий /
                         раскадровка / съемка / монтаж / корректировки / размещение </div>
                     <div class="videoCreating__itemsWrapper">
                         <div class="videoCreating__itemsImagesWrapper">
-                            <!-- START -->
+                            
 
                             <div class="videoCreating__itemImg"><picture><source srcset="./images/index/videosCreating__itemImg_1.webp" type="image/webp"><img src="./images/index/videosCreating__itemImg_1.jpg" /></picture>
                             </div>
@@ -1342,11 +1469,11 @@
                             <div class="videoCreating__itemImg"><picture><source srcset="./images/index/videosCreating__itemImg_5.webp" type="image/webp"><img src="./images/index/videosCreating__itemImg_5.jpg" /></picture>
                             </div>
 
-                            <!-- END -->
+                            
                         </div>
                         <div class="videoCreating__icons"></div>
                         <div class="videoCreating__itemsTextsWrapper">
-                            <!-- START -->
+                            
 
                             <div class="videoCreating__itemText"> <span class="videoCreating__itemText__number"> 1
                                 </span>
@@ -1420,7 +1547,7 @@
                                 </div>
                             </div>
 
-                            <!-- END -->
+                            
                         </div>
                     </div>
                 </div>
@@ -1697,10 +1824,10 @@
         </div>
 </section>
 
-<!-- sections end -->
 
 
-<!-- ! CONTENT END -->
+
+
 </div>
 
 <footer class="footer">
@@ -1730,7 +1857,7 @@
 
 
 
-                        <!-- VK -->
+                        
                         <a href="https://vk.com/doqo.studio" class="footer__contacts__socialNetworks__item">
                             <div class="footer__contacts__socialNetworks__item__icon">
                                 <svg width="34" height="20" viewBox="0 0 34 20" fill="none"
@@ -1742,7 +1869,7 @@
                             </div>
                         </a>
 
-                        <!-- WHATSAPP -->
+                        
                         <a href="https://whatsapp.com/doqo.studio" class="footer__contacts__socialNetworks__item">
                             <div class="footer__contacts__socialNetworks__item__icon">
                                 <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
@@ -1758,7 +1885,7 @@
                             </div>
                         </a>
 
-                        <!-- TELEGRAM -->
+                        
                         <a href="https://t.me/doqo_studio" class="footer__contacts__socialNetworks__item">
                             <div class="footer__contacts__socialNetworks__item__icon">
                                 <svg width="28" height="26" viewBox="0 0 28 26" fill="none"
@@ -1791,6 +1918,7 @@
 
 
             </div>
+
             <div class="footer__form">
 
                 <h6 class="footer__form__title">
@@ -1802,7 +1930,31 @@
 
                 <form class="footer__form__form" onsubmit="">
 
-                    <!--  -->
+                    
+                    <style>
+                        .footer__form__form {
+                            position: relative;
+                        }
+
+                        .footer__form__openForm {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            cursor: pointer;
+                        }
+                    </style>
+
+
+                    <script data-b24-form="click/29/3e8ckg" data-skip-moving="true">
+                        (function (w, d, u) {
+                            var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0);
+                            var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+                        })(window, document, 'https://cdn-ru.bitrix24.ru/b21004444/crm/form/loader_29.js');
+                    </script>
+                    <div class="footer__form__openForm">
+                        
+                    </div>
+                    
 
                     <fieldset class="gFormInput footer__form__form__input">
                         <div class="gFormInput__inputWrapper">
@@ -1833,12 +1985,7 @@
 
                     <textarea placeholder="Комментарий" class="gFormTextarea footer__form__form__textarea"></textarea>
 
-                    <script data-b24-form="click/29/3e8ckg" data-skip-moving="true">
-                        (function (w, d, u) {
-                            var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0);
-                            var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
-                        })(window, document, 'https://cdn-ru.bitrix24.ru/b21004444/crm/form/loader_29.js');
-                    </script>
+
                     <button class="gFormButton footer__form__form__button">
                         Отправить
                     </button>
@@ -1855,6 +2002,7 @@
                 </form>
 
             </div>
+
         </div>
 
     </div>
@@ -1862,33 +2010,6 @@
 </div>
 </div>
 </div>
-<script type="text/javascript">
-    //
-
-    const navigation = document.querySelector(".navigation")
-    const navigationActiveClassName = "navigation_active"
-
-    // open
-    document.getElementById("burger").addEventListener("click", () => {
-        !navigation.classList.contains(navigationActiveClassName) && navigation.classList.add(navigationActiveClassName)
-        document.body.style.overflowY = 'hidden'
-    })
-
-    // close
-    document.getElementById("closeMenu").addEventListener("click", () => {
-        navigation.classList.contains(navigationActiveClassName) && navigation.classList.remove(navigationActiveClassName)
-        document.body.style.overflowY = 'auto'
-    })
-
-
-        // navigation
-
-        // navigation__content
-
-
-        //    
-
-</script>
 
 <script type="text/javascript">
 

@@ -339,9 +339,7 @@ body {
 }
 
 .navigation ul li {
-  font-size: 2.7vh;
   width: 100%;
-  padding: 1em 1.4em;
   list-style: none;
   color: #ffffff;
   font-weight: 400;
@@ -355,6 +353,11 @@ body {
 
 .navigation ul li:hover {
   background: #ff9e2d;
+}
+
+.navigation ul li a {
+  font-size: 2.7vh;
+  padding: 1em 1.4em;
 }
 
 .header {
@@ -395,6 +398,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.header__logo picture {
+  width: 100%;
 }
 
 .header__logo img {
@@ -944,12 +951,16 @@ section.whoWeWorkedWith {
   -webkit-box-shadow: 0 0vw 11vw 6vw black;
           box-shadow: 0 0vw 11vw 6vw black;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 90vh;
 }
 
 .portfolio__videoPlayer_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 13000;
 }
 
 .portfolio__videoPlayer_active .portfolio__videoPlayer__videoWrapper {
@@ -2324,7 +2335,7 @@ section.whoWeWorkedWith {
     font-size: 7.6vw;
   }
 
-  .navigation ul li {
+  .navigation ul li a {
     font-size: 2.9vh;
   }
 
@@ -2794,6 +2805,7 @@ section.whoWeWorkedWith {
     -o-transition: all 500ms;
     transition: all 500ms;
     z-index: 600;
+    z-index: 12150;
   }
 
   .navigation_active {
@@ -2881,6 +2893,10 @@ section.whoWeWorkedWith {
 
   .navigation ul li {
     margin-top: 0;
+  }
+
+  .navigation ul li a {
+    width: 100%;
     font-size: 24px;
     padding: 12.5px 0;
   }
@@ -2997,8 +3013,12 @@ section.whoWeWorkedWith {
 
   .header__logo {
     margin-left: 5px;
-    height: 22px;
     width: unset;
+    height: unset;
+  }
+
+  .header__logo picture {
+    height: 22px;
   }
 
   .header__logo img {
