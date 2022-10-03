@@ -106,7 +106,7 @@ address {
   content: "";
   position: absolute;
   display: inline-block;
-  height: calc(0.2em + 0.48vw);
+  height: calc(0.2em + 0.53vw);
   left: 0;
   right: 0;
   bottom: 0;
@@ -418,6 +418,10 @@ body {
   padding-top: 6.4vw;
   padding-bottom: 3vw;
   background: #ff9e2d;
+}
+
+.footer .gTitle_c:after {
+  height: calc(0.2em + 0.75vw);
 }
 
 .footer__title,
@@ -753,6 +757,10 @@ section.whoWeWorkedWith {
 
 .intro__btn {
   margin-top: 1.2em;
+}
+
+.portfolio .gTitle_c:after {
+  height: calc(0.2em + 0.76vw);
 }
 
 .portfolio__images {
@@ -1286,6 +1294,10 @@ section.whoWeWorkedWith {
   padding: 0.94em 1em;
 }
 
+.whyAreWe .gTitle_c:after {
+  height: calc(0.2em + 0.79vw);
+}
+
 .whyAreWe__img {
   min-width: 59%;
   -webkit-transform: rotate(-2.8deg) translate(-50%, -50%);
@@ -1651,6 +1663,10 @@ section.whoWeWorkedWith {
   border-bottom: 0.04em dashed #fdf5f5;
 }
 
+.videoCreating .gTitle_c:after {
+  height: calc(0.2em + 0.514vw);
+}
+
 .videoCreating__content .container {
   padding-right: 0;
 }
@@ -1766,6 +1782,10 @@ section.whoWeWorkedWith {
 
 .suggestion {
   padding-bottom: 14vw;
+}
+
+.suggestion .gTitle_c:after {
+  height: calc(0.2em + 0.75vw);
 }
 
 .suggestion__hint {
