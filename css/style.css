@@ -639,10 +639,23 @@ section.whoWeWorkedWith {
   position: relative;
 }
 
-.intro__video__videoWrapper {
+.intro__video__loader {
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100%;
+  background: red;
+  display: none;
+}
+
+.intro__video__loader_active {
+  display: block;
+}
+
+.intro__video__videoWrapper {
+  position: relative;
+  width: 100%;
 }
 
 .intro__video__video {
@@ -653,10 +666,19 @@ section.whoWeWorkedWith {
      object-fit: cover;
 }
 
+.intro__video iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .intro__video__mask {
   position: relative;
   width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -946,17 +968,75 @@ section.whoWeWorkedWith {
 }
 
 .portfolio__videoPlayer__videoWrapper {
+  position: relative;
   cursor: default;
-  width: 70%;
+  width: 70vw;
+  height: 56.25vw;
 }
 
-.portfolio__videoPlayer__video {
-  -webkit-box-shadow: 0 0vw 11vw 6vw black;
-          box-shadow: 0 0vw 11vw 6vw black;
+.portfolio__videoPlayer iframe {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-height: 90vh;
+  height: 100%;
+}
+
+.portfolio__videoPlayer .portfolio__frameWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.portfolio__videoPlayer__loader {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portfolio__videoPlayer__loader_active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.portfolio__videoPlayer__loader__spinner {
+  width: 65px;
+  height: 65px;
+  border: 1px solid transparent;
+  border-top: 2px solid grey;
+  border-radius: 50%;
+}
+
+.portfolio__videoPlayer__loader_active .portfolio__videoPlayer__loader__spinner {
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .portfolio__videoPlayer_active {
@@ -2448,10 +2528,6 @@ section.whoWeWorkedWith {
     font-size: 2.6vw;
   }
 
-  .portfolio__videoPlayer__videoWrapper {
-    width: 85%;
-  }
-
   .price__booksImgWrapper {
     position: relative;
     left: 6%;
@@ -3137,6 +3213,11 @@ section.whoWeWorkedWith {
 
   .portfolio__images__item:nth-child(7) .portfolio__images__item__title {
     font-size: 3.9vw;
+  }
+
+  .portfolio__images__item:nth-child(7) .portfolio__images__item__btn {
+    width: 14.55vw;
+    height: 14.55vw;
   }
 
   .portfolio__images__item:nth-child(8),
