@@ -89,6 +89,10 @@ address {
   font-style: normal;
 }
 
+.ytp-watch-later-button .ytp-button .ytp-show-watch-later-title {
+  background: red !important;
+}
+
 .gTitle,
 .gTitle_c {
   text-transform: uppercase;
@@ -414,6 +418,10 @@ body {
   font-weight: 400;
 }
 
+.ytp-watch-later-button .ytp-button .ytp-show-watch-later-title {
+  background: red !important;
+}
+
 .footer {
   padding-top: 6.4vw;
   padding-bottom: 3vw;
@@ -645,8 +653,16 @@ section.whoWeWorkedWith {
   left: 0;
   height: 100%;
   width: 100%;
-  background: yellow;
+  background: rgba(255, 255, 255, 0.05);
   z-index: 1;
+}
+
+.intro__video__loader img,
+.intro__video__loader video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .intro__video__videoWrapper {
@@ -665,7 +681,7 @@ section.whoWeWorkedWith {
 
 .intro__video .intro__video__iframeWrapper {
   position: absolute;
-  inset: -1%;
+  inset: 0;
 }
 
 .intro__video .intro__video__iframeWrapper iframe {
@@ -966,9 +982,11 @@ section.whoWeWorkedWith {
 
 .portfolio__videoPlayer__videoWrapper {
   position: relative;
+  width: 68.4vw;
+  height: 38.48868vw;
   cursor: default;
-  width: 70vw;
-  height: 56.25vw;
+  -webkit-box-shadow: 0 0 34px 24px #00000091;
+          box-shadow: 0 0 34px 24px #00000091;
 }
 
 .portfolio__videoPlayer iframe {
@@ -979,61 +997,6 @@ section.whoWeWorkedWith {
 .portfolio__videoPlayer .portfolio__frameWrapper {
   height: 100%;
   width: 100%;
-}
-
-.portfolio__videoPlayer__loader {
-  display: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: black;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.portfolio__videoPlayer__loader_active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.portfolio__videoPlayer__loader__spinner {
-  width: 65px;
-  height: 65px;
-  border: 1px solid transparent;
-  border-top: 2px solid grey;
-  border-radius: 50%;
-}
-
-.portfolio__videoPlayer__loader_active .portfolio__videoPlayer__loader__spinner {
-  -webkit-animation-name: rotate;
-          animation-name: rotate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-@-webkit-keyframes rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 
 .portfolio__videoPlayer_active {
@@ -1047,9 +1010,9 @@ section.whoWeWorkedWith {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 500ms;
-  -o-transition: all 500ms;
-  transition: all 500ms;
+  -webkit-transition: all 1000ms;
+  -o-transition: all 1000ms;
+  transition: all 1000ms;
   -webkit-animation-name: a;
           animation-name: a;
   -webkit-animation-duration: 200ms;
@@ -2525,6 +2488,11 @@ section.whoWeWorkedWith {
     font-size: 2.6vw;
   }
 
+  .portfolio__videoPlayer__videoWrapper {
+    width: 80vw;
+    height: 45.016vw;
+  }
+
   .price__booksImgWrapper {
     position: relative;
     left: 6%;
@@ -3262,6 +3230,12 @@ section.whoWeWorkedWith {
     -webkit-box-ordinal-group: 7;
         -ms-flex-order: 6;
             order: 6;
+  }
+
+  .portfolio__videoPlayer__videoWrapper {
+    width: 90vw;
+    height: 50.643vw;
+    height: 90vw;
   }
 
   .price__description {
